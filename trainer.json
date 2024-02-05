@@ -1,0 +1,27 @@
+[
+    {
+        "Id": 34,
+        "Nombre": "Juan",
+        "Apellido": "Rivas",
+        "Edad": 56,
+        "HorariosD": [
+            {
+                "Horarios": "6-9AM",
+                "Disponible": "Si"
+            },
+            {
+                "Horarios": "10-12AM",
+                "Disponible": "Si"
+            }
+        ],
+        "Telefono": [
+            {
+                "Fijo": 3213
+            },
+            {
+                "Celular": 234324
+            }
+        ],
+        "Rutas": []
+    }
+]

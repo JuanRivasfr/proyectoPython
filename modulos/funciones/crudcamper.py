@@ -105,7 +105,6 @@ def veruncamper():
             return
     print("No se encontro ningun camper con ese id")
     os.system('pause')
-    savejson()
 #Guarda el json
 def savejson(): 
     with open('camper.json', 'w') as json_file:

@@ -12,5 +12,33 @@
         "Telefono": [
             []
         ]
+    },
+    {
+        "Id": 2,
+        "Nombre": "asdas",
+        "Apellido": "asd",
+        "Edad": 45,
+        "Estado": "",
+        "Ruta": "",
+        "Area": "",
+        "Grupo": "",
+        "Direccion": "0",
+        "Telefono": [
+            [
+                {
+                    "Fijo": 213
+                },
+                {
+                    "Fijo": 23432
+                },
+                {
+                    "Fijo": 23423
+                }
+            ]
+        ],
+        "Acudiente": {
+            "Nombre": "Juan",
+            "Id": "3454"
+        }
     }
 ]

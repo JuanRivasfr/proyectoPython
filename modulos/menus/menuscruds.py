@@ -1,5 +1,6 @@
 import os
-from .funciones.crudcamper import crearcamper,eliminarcamper,actualizarcamper, vertodoscampers, veruncamper
+from ..funciones.crudcamper import crearcamper,eliminarcamper,actualizarcamper, vertodoscampers, veruncamper
+from ..funciones.crudtrainer import creartrainer,eliminartrainer,actualizartrainer,vertodostrainers,veruntrainer
 #Menu Camper
 def mcamper():
     while(True):
@@ -27,7 +28,7 @@ def mcamper():
                 print("Opcion invalida")
                 mcamper()
 #Menu Trainer
-def mcamper():
+def mctrainer():
     while(True):
         os.system('cls')
         opc = int(input("1.CREAR TRAINER \n2.ELIMAR TRAINER \n3.EDITAR TRAINER \n4.BUSCAR TRAINER \n5.VOLVER \n:"))
@@ -61,7 +62,7 @@ def menucr():
             case 1:
                 mcamper()
             case 2:
-                pass
+                mctrainer()
             case 3:
                 pass
             case 4:

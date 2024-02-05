@@ -1,3 +1,3 @@
-import modulos.menuprincipal as menup
+import modulos.menus.menuprincipal as menup
 
 menup.menu()
