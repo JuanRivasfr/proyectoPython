@@ -58,7 +58,7 @@ def crearruta(iaux = None):
                     arrayauxbend.append(input("Ingrese el tema que desea agregar: ").upper())
                 case _:
                     print("Opcion no valida")
-            sel = input("Desea agregar otro tema?(S/N): ")
+            sel = input("Desea agregar otro tema?(S/N): ").upper()
             if sel == "N":
                 return arrayauxbend
                 
@@ -66,7 +66,7 @@ def crearruta(iaux = None):
     inf = { 
         "Nombre": input("Ingrese el nombre de la ruta: ")
         }
-    comun = input("Desea agregar el comun core?(S/N)\n : ").upper()
+    comun = input("Desea agregar el comun core?(S/N)\n: ").upper()
     if comun == "S":
         inf["FPOO"] = ["INTRODUCCION A LA ALGORITMIA", "PSEINT", "PYTHON"]
         inf["PWEB"] = ["HTML", "CSS", "BOOTSTRAP"]
@@ -108,8 +108,12 @@ def eliminarruta():
                 if i1 != "Nombre":
                     print(f'{i1}:')
                     print("----------------------")
-                    for i2, val2 in enumerate(val):
-                        print(val2)
+                    if i1 == "BD":
+                        for i2, val2 in (val).items():
+                            print(val2)
+                    else:                    
+                        for i2, val2 in enumerate(val):
+                            print(val2)
                     print("----------------------")
             se = input("Esta seguro que desea eliminar la rurta?(S/N): ").upper()
             if se == "S":
@@ -122,20 +126,31 @@ def eliminarruta():
                 return
     print("No se encontro el camper con ese id")
     os.system('pause')
-#Actualiza Camper
-def actualizarcamper():
+#Actualiza ruta
+def actualizarruta():
     os.system('cls')
-    id = int(input("Digite el id del camper a modificar: "))
-    for i, value in enumerate(camper):
-        if value["Id"] == id:
-            print(f'Nombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
-            se = input("Esta seguro que desea editar el camper?(S/N)")
+    nombre = input("Ingrese el nombre de la ruta a editar: ")
+    for i,value in enumerate(ruta):
+        if value["Nombre"] == nombre:
+            print(f'\nNombre: \n---------------------- \n{value["Nombre"]}')
+            print("----------------------")
+            for i1, val in (value).items():
+                if i1 != "Nombre":
+                    print(f'{i1}:')
+                    print("----------------------")
+                    if i1 == "BD":
+                        for i2, val2 in (val).items():
+                            print(val2)
+                    else:                    
+                        for i2, val2 in enumerate(val):
+                            print(val2)
+                    print("----------------------")
+            se = input("Esta seguro que desea editar la ruta?(S/N): ")
             if se == "S":
                 iaux = 1
-                infaux = crearcamper(iaux)
-                camper[i] = infaux
-                print("El camper se ha modificado")
-                print(camper)
+                infaux = crearruta(iaux)
+                ruta[i] = infaux
+                print("La ruta se ha modificado")
                 savejson()
                 os.system('pause')
                 return
@@ -143,17 +158,43 @@ def actualizarcamper():
                 return
     print("No se encontro un camper con ese registro")
     os.system('pause')
-#Ver todos los campers
-def vertodoscampers():
-    for i, value in enumerate(camper):
-        print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]} \n---------------------')
+#Ver todos las rutas
+def vertodasrutas():
+    os.system('cls')
+    for i,value in enumerate(ruta):
+        print(f'\n\nNombre: \n---------------------- \n{value["Nombre"]}')
+        print("----------------------")
+        for i1, val in (value).items():
+            if i1 != "Nombre":
+                print(f'{i1}:')
+                print("----------------------")
+                if i1 == "BD":
+                    for i2, val2 in (val).items():
+                        print(val2)
+                else:                    
+                    for i2, val2 in enumerate(val):
+                        print(val2)
+                print("----------------------")
     os.system('pause')
-#Ver un solo camper               
-def veruncamper():
-    id = int(input("Ingrese el id del camper a buscar: "))
-    for i, value in enumerate(camper):
-        if value["Id"] == id:
-            print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
+#Ver una sola ruta               
+def verunaruta():
+    os.system('cls')
+    nombre = input("Ingrese el nombre de la ruta a editar: ")
+    for i,value in enumerate(ruta):
+        if value["Nombre"] == nombre:
+            print(f'---------------------- \nNombre: \n---------------------- \n{value["Nombre"]}')
+            print("----------------------")
+            for i1, val in (value).items():
+                if i1 != "Nombre":
+                    print(f'{i1}:')
+                    print("----------------------")
+                    if i1 == "BD":
+                        for i2, val2 in (val).items():
+                            print(val2)
+                    else:                    
+                        for i2, val2 in enumerate(val):
+                            print(val2)
+                    print("----------------------")
             os.system('pause')
             return
     print("No se encontro ningun camper con ese id")

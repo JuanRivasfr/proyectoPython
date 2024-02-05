@@ -1,30 +1,5 @@
 [
     {
-        "Nombre": "AJSH",
-        "FPOO": [
-            "INTRODUCCION A LA ALGORITMIA",
-            "PSEINT",
-            "PYTHON"
-        ],
-        "PWEB": [
-            "HTML",
-            "CSS",
-            "BOOTSTRAP"
-        ],
-        "PFORMAL": [
-            "JAVA",
-            "JAVASCRIPT",
-            "C#"
-        ],
-        "BD": {
-            "BDP": "asd",
-            "BDS": "adas"
-        },
-        "BEND": [
-            "NetCore"
-        ]
-    },
-    {
         "Nombre": "ASJH",
         "FPOO": [
             "INTRODUCCION A LA ALGORITMIA",
@@ -50,7 +25,7 @@
         ]
     },
     {
-        "Nombre": "asd",
+        "Nombre": "Karol",
         "FPOO": [
             "INTRODUCCION A LA ALGORITMIA",
             "PSEINT",
@@ -67,11 +42,14 @@
             "C#"
         ],
         "BD": {
-            "BDP": "AKJD",
-            "BDS": "AKJSDG"
+            "BDP": "ASJK123",
+            "BDS": "ALSJHDS67"
         },
         "BEND": [
-            "KJASGD"
+            "NETCORE",
+            "SPRING BOOT",
+            "EXPRESS",
+            "NODEJS"
         ]
     }
 ]
