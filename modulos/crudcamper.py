@@ -1,7 +1,7 @@
 import os
 camper = list()
 
-def crearcamper():
+def crearcamper(i = None):
     
     def acudiente(edad):
         nece = input("¿El camper tiene alguna necesidad especial?(S/N) \n").upper()
@@ -38,9 +38,15 @@ def crearcamper():
                 return
     if inf["Acudiente"] == None:
         del inf["Acudiente"]
-    camper.append(inf)
-    print(camper)
-    os.system('pause')
+    
+    if i == None:
+        camper.append(inf)
+        print(camper)
+        os.system('pause')
+        return
+    else :
+        return(inf)
+    
 #Elimina Camper
 def eliminarcamper():
     id = int(input("Ingrese el id del camper a eliminar: "))
@@ -48,7 +54,32 @@ def eliminarcamper():
         if value["Id"] == id:
             print(f'Id: {value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
             se = input("Esta seguro que desea eliminar el camper?(S/N)").upper()
-            if se != "N":
+            if se == "S":
                 camper.pop(i)
-    print("El camper ha sido eliminado")
+                print("El camper ha sido eliminado")
+                os.system('pause')
+                return
+            else:
+                return
+    print("No se encontro el camper con ese id")
     os.system('pause')
+#Actualiza Camper
+def actualizarCamper():
+    os.system('cls')
+    id = int(input("Digite el id del camper a modificar: "))
+    for i, value in camper():
+        if value["Id"] == id:
+            print(f'Nombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
+            se = input("Esta seguro que desea editar el camper?(S/N)")
+            if se == "S":
+                infaux = crearcamper(i)
+                camper[value] = infaux
+                print("El camper se ha modificado")
+                print(camper)
+                os.system('pause')
+                return
+            else:
+                return
+    print("No se encontro un camper con ese registro")
+    os.system('pause')
+                
