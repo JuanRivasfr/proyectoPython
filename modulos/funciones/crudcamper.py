@@ -1,7 +1,11 @@
 import os
-camper = list()
+import json
+#Importa el json
+with open('camper.json', 'r') as json_file:
+    camper = json.load(json_file)
 
-def crearcamper(i = None):
+#Crea camper
+def crearcamper(iaux = None):
     
     def acudiente(edad):
         nece = input("¿El camper tiene alguna necesidad especial?(S/N) \n").upper()
@@ -11,6 +15,7 @@ def crearcamper(i = None):
                 "Id" : input("Ingrese el id del acudiente: ")
             }
             return infaux
+        return None
         
     inf = { 
         "Id" : int(input("Ingrese el id del camper: ")),
@@ -31,22 +36,22 @@ def crearcamper(i = None):
             for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
         ],
     inf["Acudiente"] = acudiente(inf["Edad"])
+    if inf["Acudiente"] == None:
+        del inf["Acudiente"]
     for i, value in enumerate(camper):
             if value["Id"] == inf["Id"]:
                 print("Ya hay un registro creado con el mismo ID, por favor intente con otro")
                 os.system('pause')
                 return
-    if inf["Acudiente"] == None:
-        del inf["Acudiente"]
-    
-    if i == None:
+    if iaux == None:
         camper.append(inf)
         print(camper)
+        print("El camper ha sido creado")
+        savejson()
         os.system('pause')
         return
     else :
-        return(inf)
-    
+        return inf
 #Elimina Camper
 def eliminarcamper():
     id = int(input("Ingrese el id del camper a eliminar: "))
@@ -57,6 +62,7 @@ def eliminarcamper():
             if se == "S":
                 camper.pop(i)
                 print("El camper ha sido eliminado")
+                savejson()
                 os.system('pause')
                 return
             else:
@@ -64,22 +70,43 @@ def eliminarcamper():
     print("No se encontro el camper con ese id")
     os.system('pause')
 #Actualiza Camper
-def actualizarCamper():
+def actualizarcamper():
     os.system('cls')
     id = int(input("Digite el id del camper a modificar: "))
-    for i, value in camper():
+    for i, value in enumerate(camper):
         if value["Id"] == id:
             print(f'Nombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
             se = input("Esta seguro que desea editar el camper?(S/N)")
             if se == "S":
-                infaux = crearcamper(i)
-                camper[value] = infaux
+                iaux = 1
+                infaux = crearcamper(iaux)
+                camper[i] = infaux
                 print("El camper se ha modificado")
                 print(camper)
+                savejson()
                 os.system('pause')
                 return
             else:
                 return
     print("No se encontro un camper con ese registro")
     os.system('pause')
-                
+#Ver todos los campers
+def vertodoscampers():
+    for i, value in enumerate(camper):
+        print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]} \n---------------------')
+    os.system('pause')
+#Ver un solo camper               
+def veruncamper():
+    id = int(input("Ingrese el id del camper a buscar: "))
+    for i, value in enumerate(camper):
+        if value["Id"] == id:
+            print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
+            os.system('pause')
+            return
+    print("No se encontro ningun camper con ese id")
+    os.system('pause')
+    savejson()
+#Guarda el json
+def savejson(): 
+    with open('camper.json', 'w') as json_file:
+        json.dump(camper, json_file, indent=4)
