@@ -1,19 +1,5 @@
 [
     {
-        "Id": 1,
-        "Nombre": "asd",
-        "Apellido": "asd",
-        "Edad": 90,
-        "Estado": "",
-        "Ruta": "",
-        "Area": "",
-        "Grupo": "",
-        "Direccion": "asd",
-        "Telefono": [
-            []
-        ]
-    },
-    {
         "Id": 2,
         "Nombre": "asdas",
         "Apellido": "asd",
@@ -40,5 +26,19 @@
             "Nombre": "Juan",
             "Id": "3454"
         }
+    },
+    {
+        "Id": 23,
+        "Nombre": "asa",
+        "Apellido": "ad",
+        "Edad": 67,
+        "Estado": "",
+        "Ruta": "",
+        "Area": "",
+        "Grupo": "",
+        "Direccion": "sf",
+        "Telefono": [
+            []
+        ]
     }
 ]

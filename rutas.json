@@ -1,0 +1,77 @@
+[
+    {
+        "Nombre": "AJSH",
+        "FPOO": [
+            "INTRODUCCION A LA ALGORITMIA",
+            "PSEINT",
+            "PYTHON"
+        ],
+        "PWEB": [
+            "HTML",
+            "CSS",
+            "BOOTSTRAP"
+        ],
+        "PFORMAL": [
+            "JAVA",
+            "JAVASCRIPT",
+            "C#"
+        ],
+        "BD": {
+            "BDP": "asd",
+            "BDS": "adas"
+        },
+        "BEND": [
+            "NetCore"
+        ]
+    },
+    {
+        "Nombre": "ASJH",
+        "FPOO": [
+            "INTRODUCCION A LA ALGORITMIA",
+            "PSEINT",
+            "PYTHON"
+        ],
+        "PWEB": [
+            "HTML",
+            "CSS",
+            "BOOTSTRAP"
+        ],
+        "PFORMAL": [
+            "JAVA",
+            "JAVASCRIPT",
+            "C#"
+        ],
+        "BD": {
+            "BDP": "LAJDS",
+            "BDS": "AJSD"
+        },
+        "BEND": [
+            "NETCORE"
+        ]
+    },
+    {
+        "Nombre": "asd",
+        "FPOO": [
+            "INTRODUCCION A LA ALGORITMIA",
+            "PSEINT",
+            "PYTHON"
+        ],
+        "PWEB": [
+            "HTML",
+            "CSS",
+            "BOOTSTRAP"
+        ],
+        "PFORMAL": [
+            "JAVA",
+            "JAVASCRIPT",
+            "C#"
+        ],
+        "BD": {
+            "BDP": "AKJD",
+            "BDS": "AKJSDG"
+        },
+        "BEND": [
+            "KJASGD"
+        ]
+    }
+]

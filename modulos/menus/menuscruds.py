@@ -1,6 +1,7 @@
 import os
 from ..funciones.crudcamper import crearcamper,eliminarcamper,actualizarcamper, vertodoscampers, veruncamper
 from ..funciones.crudtrainer import creartrainer,eliminartrainer,actualizartrainer,vertodostrainers,veruntrainer
+from ..funciones.crudruta import crearruta, eliminarruta
 #Menu Camper
 def mcamper():
     while(True):
@@ -53,6 +54,32 @@ def mctrainer():
             case _:
                 print("Opcion invalida")
                 mcamper()
+#Menu Rutas
+def mrutas():
+    while(True):
+        os.system('cls')
+        opc = int(input("1.CREAR RUTAS \n2.ELIMAR RUTAS \n3.EDITAR RUTAS \n4.BUSCAR RUTAS \n5.VOLVER \n:"))
+        match(opc):
+            case 1:
+                crearruta()
+            case 2:
+                eliminarruta()
+            case 3:
+                actualizarruta()
+            case 4:
+                opc1 = int(input("1.LISTAR TODAS LAS RUTAS \n2.LISTAR UNA RUTA \n3. VOLVER \n:"))
+                match(opc1):
+                    case 1:
+                        vertodasrutas()
+                    case 2:
+                        verunaruta()
+                    case 3:
+                        break
+            case 5:
+                break
+            case _:
+                print("Opcion invalida")
+                mcamper()
 #Menu Principal
 def menucr():
     os.system('cls')
@@ -64,7 +91,7 @@ def menucr():
             case 2:
                 mctrainer()
             case 3:
-                pass
+                mrutas()
             case 4:
                 break
             case _:
