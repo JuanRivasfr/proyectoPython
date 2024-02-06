@@ -24,8 +24,8 @@ def crearcamper(iaux = None):
         "Edad" : int(input("Ingrese la edad del camper: ")),
         "Estado" : "",
         "Ruta" : "",
-        "Area" : "",
-        "Grupo" : "" 
+        "Grupo" : "",
+        "Notas" : [] 
     }
     inf["Direccion"] = input("Ingrese la direccion del camper: ")
     inf["Telefono"] = [

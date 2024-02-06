@@ -107,6 +107,24 @@ def mgrupo():
             case _:
                 print("Opcion invalida")
                 mgrupo()
+#Segunda opcion Menu
+def menugestion():
+    os.system('cls')
+    while(True):
+        opc = int(input("1.CRUD GRUPO \n2.ASIGNAR ESTUDIANTES \n3.CRUD RUTAS \n4.VOLVER \n:"))
+        match(opc):
+            case 1:
+                mgrupo()
+            case 2:
+                pass
+            case 3:
+                pass
+            case 4:
+                break
+            case _:
+                print("Opcion invalida")
+                menucr()
+        
 #Menu Principal
 def menucr():
     os.system('cls')

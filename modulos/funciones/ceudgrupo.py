@@ -19,7 +19,7 @@ def creargrupos(iaux = None):
         "Final" : input("Ingrese la fecha de finalizacion(AA/MM/DD): "),
         "Salon" : "",
         "Modulo" : "Fundamentos de Programacion",
-        "Estudiantes" : "",
+        "Estudiantes" : [],
         "Ruta" : ""
     }
     print("Que trainer desde agregar a la ruta?")

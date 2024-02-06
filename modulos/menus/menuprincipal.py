@@ -1,5 +1,5 @@
 import os
-from .menuscruds import menucr,mgrupo
+from .menuscruds import menucr,menugestion
 
 def menu():
     while(True):
@@ -13,7 +13,7 @@ def menu():
                 case 1:
                     menucr()
                 case 2:
-                    mgrupo()
+                    menugestion()
                 case 3:
                     pass
                 case 4:
