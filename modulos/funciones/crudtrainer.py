@@ -1,8 +1,5 @@
 import os
 import json
-#Importa el json
-with open('trainer.json', 'r') as json_file:
-    trainer = json.load(json_file)
 
 #Crea trainer
 def creartrainer(iaux = None):
@@ -59,7 +56,7 @@ def creartrainer(iaux = None):
         trainer.append(inf)
         print(trainer)
         print("El trainer ha sido creado")
-        savejson()
+        savejson(trainer)
         os.system('pause')
         return
     else :
@@ -76,7 +73,7 @@ def eliminartrainer():
             if se == "S":
                 trainer.pop(i)
                 print("El trainer ha sido eliminado")
-                savejson()
+                savejson(trainer)
                 os.system('pause')
                 return
             else:
@@ -99,7 +96,7 @@ def actualizartrainer():
                 trainer[i] = infaux
                 print("El trainer se ha modificado")
                 print(trainer)
-                savejson()
+                savejson(trainer)
                 os.system('pause')
                 return
             else:
@@ -126,6 +123,6 @@ def veruntrainer():
     print("No se encontro ningun trainer con ese id")
     os.system('pause')
 #Guarda el json
-def savejson(): 
+def savejson(trainer): 
     with open('trainer.json', 'w') as json_file:
         json.dump(trainer, json_file, indent=4)

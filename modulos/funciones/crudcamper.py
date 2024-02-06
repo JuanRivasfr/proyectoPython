@@ -1,8 +1,5 @@
 import os
 import json
-#Importa el json
-with open('camper.json', 'r') as json_file:
-    camper = json.load(json_file)
 
 #Crea camper
 def crearcamper(iaux = None):
@@ -49,7 +46,7 @@ def crearcamper(iaux = None):
         camper.append(inf)
         print(camper)
         print("El camper ha sido creado")
-        savejson()
+        savejson(camper)
         os.system('pause')
         return
     else :
@@ -66,7 +63,7 @@ def eliminarcamper():
             if se == "S":
                 camper.pop(i)
                 print("El camper ha sido eliminado")
-                savejson()
+                savejson(camper)
                 os.system('pause')
                 return
             else:
@@ -89,7 +86,7 @@ def actualizarcamper():
                 camper[i] = infaux
                 print("El camper se ha modificado")
                 print(camper)
-                savejson()
+                savejson(camper)
                 os.system('pause')
                 return
             else:
@@ -116,6 +113,6 @@ def veruncamper():
     print("No se encontro ningun camper con ese id")
     os.system('pause')
 #Guarda el json
-def savejson(): 
+def savejson(camper): 
     with open('camper.json', 'w') as json_file:
         json.dump(camper, json_file, indent=4)

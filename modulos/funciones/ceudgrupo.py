@@ -1,14 +1,6 @@
 import os
 import json
 #Importa el json
-with open('grupos.json', 'r') as json_file:
-    grupos = json.load(json_file)
-
-with open('trainer.json', 'r') as json_file1:
-    trainer = json.load(json_file1)
-
-with open('rutas.json', 'r') as json_file2:
-    ruta = json.load(json_file2)
 
 #Crea grupos
 def creargrupos(iaux = None):
@@ -87,8 +79,8 @@ def creargrupos(iaux = None):
     if iaux == None:
         grupos.append(inf)
         print("El grupo ha sido creado")
-        savejson()
-        savejsontrainers()
+        savejson(grupos)
+        savejsontrainers(trainer)
         os.system('pause')
         return
     else :
@@ -117,8 +109,8 @@ def eliminargrupos():
                                     trainer[i1]["HorariosD"][i3]["Disponible"] = "Si"
                                     grupos.pop(i)
                                     print("El grupo ha sido eliminado")
-                                    savejson()
-                                    savejsontrainers()
+                                    savejson(grupos)
+                                    savejsontrainers(trainer)
                                     os.system('pause')
                                     return
             else:
@@ -147,12 +139,12 @@ def actualizargrupos():
                             for i3, v in enumerate(va):
                                 if v["Horarios"] == value["Horario"]:
                                     trainer[i1]["HorariosD"][i3]["Disponible"] = "Si"
-                                    savejsontrainers()
+                                    savejsontrainers(trainer)
                                     iux = 3
                                     inf1 = creargrupos(iux)
                                     grupos[i] = inf1
                                     print("El grupo ha sido editado")
-                                    savejson()
+                                    savejson(grupos)
                                     os.system('pause')
                                     return
             else:
@@ -192,10 +184,10 @@ def verungrupo():
     print("No se encontro ningun camper con ese id")
     os.system('pause')
 #Guarda el json
-def savejson(): 
+def savejson(grupos): 
     with open('grupos.json', 'w') as json_file:
         json.dump(grupos, json_file, indent=4)
 
-def savejsontrainers():
+def savejsontrainers(trainer):
     with open('trainer.json', 'w') as json_file1:
         json.dump(trainer, json_file1, indent=4)

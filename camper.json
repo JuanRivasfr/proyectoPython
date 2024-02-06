@@ -1,70 +1,28 @@
 [
     {
-        "Id": 2,
-        "Nombre": "asdas",
-        "Apellido": "asd",
-        "Edad": 45,
+        "Id": 12,
+        "Nombre": "Juan",
+        "Apellido": "Rivas",
+        "Edad": 19,
         "Estado": "",
-        "Ruta": "",
-        "Area": "",
-        "Grupo": "",
-        "Direccion": "0",
-        "Telefono": [
-            [
-                {
-                    "Fijo": 213
-                },
-                {
-                    "Fijo": 23432
-                },
-                {
-                    "Fijo": 23423
-                }
-            ]
-        ],
-        "Acudiente": {
-            "Nombre": "Juan",
-            "Id": "3454"
-        }
-    },
-    {
-        "Id": 13213,
-        "Nombre": "xzas",
-        "Apellido": "asda",
-        "Edad": 78,
-        "Estado": "",
-        "Ruta": "",
-        "Grupo": "",
+        "Ruta": "345",
+        "Grupo": "M4",
         "Notas": [],
-        "Direccion": "0",
+        "Direccion": "asd",
         "Telefono": [
             []
         ]
     },
     {
-        "Id": 1,
-        "Nombre": "SAD",
-        "Apellido": "ASD",
-        "Edad": 67,
+        "Id": 34,
+        "Nombre": "Mateo",
+        "Apellido": "Hson",
+        "Edad": 19,
         "Estado": "",
-        "Ruta": "",
-        "Grupo": "",
+        "Ruta": "345",
+        "Grupo": "M4",
         "Notas": [],
-        "Direccion": "dsf",
-        "Telefono": [
-            []
-        ]
-    },
-    {
-        "Id": 4,
-        "Nombre": "ASD",
-        "Apellido": "ASDSA",
-        "Edad": 45,
-        "Estado": "",
-        "Ruta": "",
-        "Grupo": "",
-        "Notas": [],
-        "Direccion": "ASDAS",
+        "Direccion": "sad",
         "Telefono": [
             []
         ]

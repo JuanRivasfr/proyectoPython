@@ -1,8 +1,6 @@
 import os
 import json
-#Importa el json
-with open('rutas.json', 'r') as json_file:
-    ruta = json.load(json_file)
+
 #Crea ruta
 def crearruta(iaux = None):
     with open('rutas.json', 'r') as json_file:
@@ -94,7 +92,7 @@ def crearruta(iaux = None):
         ruta.append(inf)
         print(ruta)
         print("La ruta ha sido creada")
-        savejson()
+        savejson(ruta)
         os.system('pause')
         return
     else :
@@ -123,7 +121,7 @@ def eliminarruta():
             if se == "S":
                 ruta.pop(i)
                 print("La ruta ha sido eliminada")
-                savejson()
+                savejson(ruta)
                 os.system('pause')
                 return
             else:
@@ -157,7 +155,7 @@ def actualizarruta():
                 infaux = crearruta(iaux)
                 ruta[i] = infaux
                 print("La ruta se ha modificado")
-                savejson()
+                savejson(ruta)
                 os.system('pause')
                 return
             else:
@@ -210,6 +208,6 @@ def verunaruta():
     print("No se encontro ningun camper con ese id")
     os.system('pause')
 #Guarda el json
-def savejson(): 
+def savejson(ruta): 
     with open('rutas.json', 'w') as json_file:
         json.dump(ruta, json_file, indent=4)

@@ -1,41 +1,24 @@
 [
     {
-        "Identificador": "12321",
-        "Inicio": "sadsad",
-        "Final": "sdsad",
+        "Identificador": "M4",
+        "Inicio": "12/34/56",
+        "Final": "34/56/78",
         "Salon": "Sputnik",
         "Modulo": "Fundamentos de Programacion",
         "Estudiantes": [
             {
-                "Id": 13213,
-                "Nombre": "xzas",
-                "Apellido": "asda"
+                "Id": 12,
+                "Nombre": "Juan",
+                "Apellido": "Rivas"
             },
             {
-                "Id": 1,
-                "Nombre": "SAD",
-                "Apellido": "ASD"
+                "Id": 34,
+                "Nombre": "Mateo",
+                "Apellido": "Hson"
             }
         ],
-        "Ruta": "Karol",
-        "Trainer": "Juan",
-        "Horario": "10-12AM"
-    },
-    {
-        "Identificador": "SDASD",
-        "Inicio": "sad",
-        "Final": "asd",
-        "Salon": "Apolo",
-        "Modulo": "Fundamentos de Programacion",
-        "Estudiantes": [
-            {
-                "Id": 2,
-                "Nombre": "asdas",
-                "Apellido": "asd"
-            }
-        ],
-        "Ruta": "ASJH",
-        "Trainer": "Miguel",
+        "Ruta": "345",
+        "Trainer": "Miguek",
         "Horario": "10-12AM"
     }
 ]

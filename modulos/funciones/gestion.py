@@ -1,13 +1,6 @@
 import os
 import json
 
-estudiantes = list()
-
-with open('camper.json', 'r') as json_file:
-    camper = json.load(json_file)
-
-with open('grupos.json', 'r') as json_file:
-    grupos = json.load(json_file)
 #Asignar estudiantes a los salones
 def asignarestudiantes():
     with open('camper.json', 'r') as json_file:
@@ -47,8 +40,8 @@ def asignarestudiantes():
                     if camper[index]["Id"] == id:
                         camper[index]["Grupo"] = grupos[i]["Identificador"]
                         camper[index]["Ruta"] = grupos[i]["Ruta"]
-                savejson()
-                savejson1()
+                savejson(camper)
+                savejson1(grupos)
                 print("Se ha añadido el camper")
                 os.system('pause')
             else: 
@@ -57,13 +50,14 @@ def asignarestudiantes():
                 return
     
     opc1 = input("Dese agregar otro camper?(S/N): ").upper()
-    if opc1 == "N":
-        return
+    if opc1 == "S":
+        asignarestudiantes()
 #Guarda el json
-def savejson(): 
+
+def savejson(camper): 
     with open('camper.json', 'w') as json_file:
         json.dump(camper, json_file, indent=4)
 
-def savejson1(): 
+def savejson1(grupos): 
     with open('grupos.json', 'w') as json_file1:
         json.dump(grupos, json_file1, indent=4)

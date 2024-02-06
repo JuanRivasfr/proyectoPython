@@ -1,34 +1,8 @@
 [
     {
-        "Id": 34,
-        "Nombre": "Juan",
-        "Apellido": "Rivas",
-        "Edad": 56,
-        "HorariosD": [
-            {
-                "Horarios": "6-9AM",
-                "Disponible": "Si"
-            },
-            {
-                "Horarios": "10-12AM",
-                "Disponible": "Si"
-            }
-        ],
-        "Telefono": [
-            {
-                "Fijo": 3213
-            },
-            {
-                "Celular": 234324
-            }
-        ],
-        "Rutas": [],
-        "Disponible": "Si"
-    },
-    {
-        "Id": 123445436,
-        "Nombre": "Miguel",
-        "Apellido": "Garcia",
+        "Id": 123,
+        "Nombre": "Miguek",
+        "Apellido": "asd",
         "Edad": 23,
         "HorariosD": [
             {
