@@ -91,43 +91,49 @@ def eliminargrupos():
             se = input("Esta seguro que desea eliminar la ruta?(S/N)").upper()
             if se == "S":
                 for i1, val in enumerate(trainer):
-                    if val == "HorariosD":
-                        for i2, v in enumerate(val):
-                            if v["Horarios"] == value["Horario"]:
-                                val["Disponible"] = "Si"
-                                grupos.pop(i)
-                                print("La ruta ha sido eliminado")
-                savejson()
-                savejsontrainers()
-                os.system('pause')
-                return
+                    for i2, va in (val).items():
+                        if i2 == "HorariosD":
+                            for i3, v in enumerate(va):
+                                if v["Horarios"] == value["Horario"]:
+                                    trainer[i1]["HorariosD"][i3]["Disponible"] = "Si"
+                                    grupos.pop(i)
+                                    print("El grupo ha sido eliminado")
+                                    savejson()
+                                    savejsontrainers()
+                                    os.system('pause')
+                                    return
             else:
                 return
     print("No se encontro el camper con ese id")
     os.system('pause')
-#Actualiza la ruta
-def actualizarruta():
-    os.system('cls')
-    id = int(input("Digite el id del camper a modificar: "))
-    for i, value in enumerate(camper):
-        if value["Id"] == id:
-            print(f'Nombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
-            se = input("Esta seguro que desea editar el camper?(S/N)")
+#Actualiza Grupos
+def actualizargrupos():
+    id = input("Ingrese el identificador del grupo a eliminar: ").upper()
+    for i,value in enumerate(grupos):
+        if value["Identificador"] == id:
+            print(f'Identificador: {value["Identificador"]} \nTrainer: {value["Trainer"]} \nHorario: {value["Horario"]} \nSalon: {value["Salon"]} \nRuta: {value["Ruta"]}')
+            se = input("Esta seguro que desea editar la ruta?(S/N)").upper()
             if se == "S":
-                iaux = 1
-                infaux = crearcamper(iaux)
-                camper[i] = infaux
-                print("El camper se ha modificado")
-                print(camper)
-                savejson()
-                os.system('pause')
-                return
+                for i1, val in enumerate(trainer):
+                    for i2, va in (val).items():
+                        if i2 == "HorariosD":
+                            for i3, v in enumerate(va):
+                                if v["Horarios"] == value["Horario"]:
+                                    trainer[i1]["HorariosD"][i3]["Disponible"] = "Si"
+                                    savejsontrainers()
+                                    iux = 3
+                                    inf1 = creargrupos(iux)
+                                    grupos[i] = inf1
+                                    print("El grupo ha sido editado")
+                                    savejson()
+                                    os.system('pause')
+                                    return
             else:
                 return
-    print("No se encontro un camper con ese registro")
+    print("No se encontro el camper con ese id")
     os.system('pause')
-#Ver todos los campers
-def vertodoscampers():
+#Ver todos los grupos
+def vertodosgrupos():
     for i, value in enumerate(camper):
         print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]} \n---------------------')
     os.system('pause')

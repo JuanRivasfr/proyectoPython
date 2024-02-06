@@ -2,7 +2,7 @@ import os
 from ..funciones.crudcamper import crearcamper,eliminarcamper,actualizarcamper, vertodoscampers, veruncamper
 from ..funciones.crudtrainer import creartrainer,eliminartrainer,actualizartrainer,vertodostrainers,veruntrainer
 from ..funciones.crudruta import crearruta, eliminarruta, actualizarruta, vertodasrutas, verunaruta
-from ..funciones.ceudgrupo import creargrupos, eliminargrupos
+from ..funciones.ceudgrupo import creargrupos, eliminargrupos, actualizargrupos
 #Menu Camper
 def mcamper():
     while(True):
@@ -92,7 +92,7 @@ def mgrupo():
             case 2:
                 eliminargrupos()
             case 3:
-                actualizargrupo()
+                actualizargrupos()
             case 4:
                 opc1 = int(input("1.LISTAR TODOS LOS GRUPOS \n2.LISTAR UN GRUPO \n3. VOLVER \n:"))
                 match(opc1):
