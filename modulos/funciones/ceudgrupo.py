@@ -13,6 +13,15 @@ with open('rutas.json', 'r') as json_file2:
 #Crea grupos
 def creargrupos(iaux = None):
 
+    with open('grupos.json', 'r') as json_file:
+        grupos = json.load(json_file)
+
+    with open('trainer.json', 'r') as json_file1:
+        trainer = json.load(json_file1)
+
+    with open('rutas.json', 'r') as json_file2:
+        ruta = json.load(json_file2)
+
     inf = { 
         "Identificador" : input("Ingrese el identificador del grupo: ").upper(),
         "Inicio" : input("Ingrese la fecha de inicio(AA/MM/DD): "),
@@ -86,6 +95,14 @@ def creargrupos(iaux = None):
         return inf
 #Elimina Grupos
 def eliminargrupos():
+    with open('grupos.json', 'r') as json_file:
+        grupos = json.load(json_file)
+
+    with open('trainer.json', 'r') as json_file1:
+        trainer = json.load(json_file1)
+
+    with open('rutas.json', 'r') as json_file2:
+        ruta = json.load(json_file2)
     id = input("Ingrese el identificador del grupo a eliminar: ").upper()
     for i,value in enumerate(grupos):
         if value["Identificador"] == id:
@@ -110,6 +127,14 @@ def eliminargrupos():
     os.system('pause')
 #Actualiza Grupos
 def actualizargrupos():
+    with open('grupos.json', 'r') as json_file:
+        grupos = json.load(json_file)
+
+    with open('trainer.json', 'r') as json_file1:
+        trainer = json.load(json_file1)
+
+    with open('rutas.json', 'r') as json_file2:
+        ruta = json.load(json_file2)
     id = input("Ingrese el identificador del grupo a eliminar: ").upper()
     for i,value in enumerate(grupos):
         if value["Identificador"] == id:
@@ -136,12 +161,28 @@ def actualizargrupos():
     os.system('pause')
 #Ver todos los grupos
 def vertodosgrupos():
+    with open('grupos.json', 'r') as json_file:
+        grupos = json.load(json_file)
+
+    with open('trainer.json', 'r') as json_file1:
+        trainer = json.load(json_file1)
+
+    with open('rutas.json', 'r') as json_file2:
+        ruta = json.load(json_file2)
     for i,value in enumerate(grupos):
         print("-----------------------------------------------------------")
         print(f'Identificador: {value["Identificador"]} \nTrainer: {value["Trainer"]} \nHorario: {value["Horario"]} \nSalon: {value["Salon"]} \nRuta: {value["Ruta"]}')
     os.system('pause')
 #Ver una ruta             
 def verungrupo():
+    with open('grupos.json', 'r') as json_file:
+        grupos = json.load(json_file)
+
+    with open('trainer.json', 'r') as json_file1:
+        trainer = json.load(json_file1)
+
+    with open('rutas.json', 'r') as json_file2:
+        ruta = json.load(json_file2)
     id = input("Ingrese el identificador del grupo a ver: ").upper()
     for i,value in enumerate(grupos):
         if value["Identificador"] == id:

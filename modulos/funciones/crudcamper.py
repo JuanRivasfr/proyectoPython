@@ -6,7 +6,9 @@ with open('camper.json', 'r') as json_file:
 
 #Crea camper
 def crearcamper(iaux = None):
-    
+    with open('camper.json', 'r') as json_file:
+        camper = json.load(json_file)
+
     def acudiente(edad):
         nece = input("¿El camper tiene alguna necesidad especial?(S/N) \n").upper()
         if edad < 18 or nece == "S":
@@ -54,6 +56,8 @@ def crearcamper(iaux = None):
         return inf
 #Elimina Camper
 def eliminarcamper():
+    with open('camper.json', 'r') as json_file:
+        camper = json.load(json_file)
     id = int(input("Ingrese el id del camper a eliminar: "))
     for i,value in enumerate(camper):
         if value["Id"] == id:
@@ -71,6 +75,8 @@ def eliminarcamper():
     os.system('pause')
 #Actualiza Camper
 def actualizarcamper():
+    with open('camper.json', 'r') as json_file:
+        camper = json.load(json_file)
     os.system('cls')
     id = int(input("Digite el id del camper a modificar: "))
     for i, value in enumerate(camper):
@@ -92,11 +98,15 @@ def actualizarcamper():
     os.system('pause')
 #Ver todos los campers
 def vertodoscampers():
+    with open('camper.json', 'r') as json_file:
+        camper = json.load(json_file)
     for i, value in enumerate(camper):
         print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]} \n---------------------')
     os.system('pause')
 #Ver un solo camper               
 def veruncamper():
+    with open('camper.json', 'r') as json_file:
+        camper = json.load(json_file)
     id = int(input("Ingrese el id del camper a buscar: "))
     for i, value in enumerate(camper):
         if value["Id"] == id:

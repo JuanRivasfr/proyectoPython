@@ -5,7 +5,18 @@
         "Final": "sdsad",
         "Salon": "Sputnik",
         "Modulo": "Fundamentos de Programacion",
-        "Estudiantes": "",
+        "Estudiantes": [
+            {
+                "Id": 13213,
+                "Nombre": "xzas",
+                "Apellido": "asda"
+            },
+            {
+                "Id": 1,
+                "Nombre": "SAD",
+                "Apellido": "ASD"
+            }
+        ],
         "Ruta": "Karol",
         "Trainer": "Juan",
         "Horario": "10-12AM"
@@ -16,7 +27,13 @@
         "Final": "asd",
         "Salon": "Apolo",
         "Modulo": "Fundamentos de Programacion",
-        "Estudiantes": "",
+        "Estudiantes": [
+            {
+                "Id": 2,
+                "Nombre": "asdas",
+                "Apellido": "asd"
+            }
+        ],
         "Ruta": "ASJH",
         "Trainer": "Miguel",
         "Horario": "10-12AM"

@@ -6,7 +6,9 @@ with open('trainer.json', 'r') as json_file:
 
 #Crea trainer
 def creartrainer(iaux = None):
-    
+    with open('trainer.json', 'r') as json_file:
+        trainer = json.load(json_file)
+
     def horariostrainer():
         arrayaux = []
         print("En que horarios tiene disponibilidad el trainer?")
@@ -64,6 +66,8 @@ def creartrainer(iaux = None):
         return inf
 #Elimina trainer
 def eliminartrainer():
+    with open('trainer.json', 'r') as json_file:
+        trainer = json.load(json_file)
     id = int(input("Ingrese el id del camper a trainer: "))
     for i,value in enumerate(trainer):
         if value["Id"] == id:
@@ -81,6 +85,8 @@ def eliminartrainer():
     os.system('pause')
 #Actualiza trainer
 def actualizartrainer():
+    with open('trainer.json', 'r') as json_file:
+        trainer = json.load(json_file)
     os.system('cls')
     id = int(input("Digite el id del trainer a modificar: "))
     for i, value in enumerate(trainer):
@@ -102,11 +108,15 @@ def actualizartrainer():
     os.system('pause')
 #Ver todos los trainer
 def vertodostrainers():
+    with open('trainer.json', 'r') as json_file:
+        trainer = json.load(json_file)
     for i, value in enumerate(trainer):
         print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]} \n---------------------')
     os.system('pause')
 #Ver un solo trainer               
 def veruntrainer():
+    with open('trainer.json', 'r') as json_file:
+        trainer = json.load(json_file)
     id = int(input("Ingrese el id del trainer a buscar: "))
     for i, value in enumerate(trainer):
         if value["Id"] == id:

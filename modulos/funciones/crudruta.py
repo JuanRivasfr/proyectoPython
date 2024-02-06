@@ -5,6 +5,8 @@ with open('rutas.json', 'r') as json_file:
     ruta = json.load(json_file)
 #Crea ruta
 def crearruta(iaux = None):
+    with open('rutas.json', 'r') as json_file:
+        ruta = json.load(json_file)
 
     def fpoo():
         arrayauxfpoo = []
@@ -99,6 +101,8 @@ def crearruta(iaux = None):
         return inf
 #Elimina ruta
 def eliminarruta():
+    with open('rutas.json', 'r') as json_file:
+        ruta = json.load(json_file)
     nombre = input("Ingrese el nombre de la ruta a eliminar: ")
     for i,value in enumerate(ruta):
         if value["Nombre"] == nombre:
@@ -128,6 +132,8 @@ def eliminarruta():
     os.system('pause')
 #Actualiza ruta
 def actualizarruta():
+    with open('rutas.json', 'r') as json_file:
+        ruta = json.load(json_file)
     os.system('cls')
     nombre = input("Ingrese el nombre de la ruta a editar: ")
     for i,value in enumerate(ruta):
@@ -160,6 +166,8 @@ def actualizarruta():
     os.system('pause')
 #Ver todos las rutas
 def vertodasrutas():
+    with open('rutas.json', 'r') as json_file:
+        ruta = json.load(json_file)
     os.system('cls')
     for i,value in enumerate(ruta):
         print(f'\n\nNombre: \n---------------------- \n{value["Nombre"]}')
@@ -178,6 +186,8 @@ def vertodasrutas():
     os.system('pause')
 #Ver una sola ruta               
 def verunaruta():
+    with open('rutas.json', 'r') as json_file:
+        ruta = json.load(json_file)
     os.system('cls')
     nombre = input("Ingrese el nombre de la ruta a editar: ")
     for i,value in enumerate(ruta):

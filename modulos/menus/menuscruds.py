@@ -3,6 +3,7 @@ from ..funciones.crudcamper import crearcamper,eliminarcamper,actualizarcamper, 
 from ..funciones.crudtrainer import creartrainer,eliminartrainer,actualizartrainer,vertodostrainers,veruntrainer
 from ..funciones.crudruta import crearruta, eliminarruta, actualizarruta, vertodasrutas, verunaruta
 from ..funciones.ceudgrupo import creargrupos, eliminargrupos, actualizargrupos, vertodosgrupos, verungrupo
+from ..funciones.gestion import asignarestudiantes
 #Menu Camper
 def mcamper():
     while(True):
@@ -116,7 +117,7 @@ def menugestion():
             case 1:
                 mgrupo()
             case 2:
-                pass
+                asignarestudiantes()
             case 3:
                 pass
             case 4:
