@@ -2,6 +2,7 @@ import os
 from ..funciones.crudcamper import crearcamper,eliminarcamper,actualizarcamper, vertodoscampers, veruncamper
 from ..funciones.crudtrainer import creartrainer,eliminartrainer,actualizartrainer,vertodostrainers,veruntrainer
 from ..funciones.crudruta import crearruta, eliminarruta, actualizarruta, vertodasrutas, verunaruta
+from ..funciones.ceudgrupo import creargrupos, eliminargrupos
 #Menu Camper
 def mcamper():
     while(True):
@@ -53,7 +54,7 @@ def mctrainer():
                 break
             case _:
                 print("Opcion invalida")
-                mcamper()
+                mctrainer()
 #Menu Rutas
 def mrutas():
     while(True):
@@ -79,12 +80,38 @@ def mrutas():
                 break
             case _:
                 print("Opcion invalida")
-                mcamper()
+                mrutas()
+#Menu Grupos
+def mgrupo():
+    while(True):
+        os.system('cls')
+        opc = int(input("1.CREAR GRUPO \n2.ELIMAR GRUPO \n3.EDITAR GRUPO \n4.BUSCAR GRUPO \n5.VOLVER \n:"))
+        match(opc):
+            case 1:
+                creargrupos()
+            case 2:
+                eliminargrupos()
+            case 3:
+                actualizargrupo()
+            case 4:
+                opc1 = int(input("1.LISTAR TODOS LOS GRUPOS \n2.LISTAR UN GRUPO \n3. VOLVER \n:"))
+                match(opc1):
+                    case 1:
+                        vertodosgrupos()
+                    case 2:
+                        verungrupo()
+                    case 3:
+                        break
+            case 5:
+                break
+            case _:
+                print("Opcion invalida")
+                mgrupo()
 #Menu Principal
 def menucr():
     os.system('cls')
     while(True):
-        opc = int(input("1.CRUD CAMPER \n2.CRUD TRAINER \n3.CRUD RUTAS \n:"))
+        opc = int(input("1.CRUD CAMPER \n2.CRUD TRAINER \n3.CRUD RUTAS \n4.VOLVER \n:"))
         match(opc):
             case 1:
                 mcamper()
