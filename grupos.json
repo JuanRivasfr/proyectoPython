@@ -9,5 +9,16 @@
         "Ruta": "Karol",
         "Trainer": "Juan",
         "Horario": "10-12AM"
+    },
+    {
+        "Identificador": "SDASD",
+        "Inicio": "sad",
+        "Final": "asd",
+        "Salon": "Apolo",
+        "Modulo": "Fundamentos de Programacion",
+        "Estudiantes": "",
+        "Ruta": "ASJH",
+        "Trainer": "Miguel",
+        "Horario": "10-12AM"
     }
 ]

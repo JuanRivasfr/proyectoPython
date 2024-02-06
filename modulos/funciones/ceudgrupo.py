@@ -42,8 +42,7 @@ def creargrupos(iaux = None):
                 if (i1 + 1) == opc:
                     hor = val["Horarios"]
                     val["Disponible"] = "No"
-    inf["Trainer"] = nom
-    inf["Horario"] = hor
+    
     #Agregar Salon
     auxsalon = input("Que salon desea agregar? \n1. Artemis \n2. Apolo \n3. Sputnik \n:")
     if auxsalon == "1":
@@ -56,8 +55,11 @@ def creargrupos(iaux = None):
         for i, value in enumerate(grupos):
             if value["Salon"] == salon and value["Horario"] == hor:
                 print("El salon esta ocupado en ese horario")
+                os.system('pause')
                 return
     inf["Salon"] = salon
+    inf["Trainer"] = nom
+    inf["Horario"] = hor
     #Agregar ruta
     print("Que ruta desea agregar al grupo")
     for i,value in enumerate(ruta):
@@ -134,15 +136,16 @@ def actualizargrupos():
     os.system('pause')
 #Ver todos los grupos
 def vertodosgrupos():
-    for i, value in enumerate(camper):
-        print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]} \n---------------------')
+    for i,value in enumerate(grupos):
+        print("-----------------------------------------------------------")
+        print(f'Identificador: {value["Identificador"]} \nTrainer: {value["Trainer"]} \nHorario: {value["Horario"]} \nSalon: {value["Salon"]} \nRuta: {value["Ruta"]}')
     os.system('pause')
-#Ver un solo camper               
-def veruncamper():
-    id = int(input("Ingrese el id del camper a buscar: "))
-    for i, value in enumerate(camper):
-        if value["Id"] == id:
-            print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
+#Ver una ruta             
+def verungrupo():
+    id = input("Ingrese el identificador del grupo a ver: ").upper()
+    for i,value in enumerate(grupos):
+        if value["Identificador"] == id:
+            print(f'Identificador: {value["Identificador"]} \nTrainer: {value["Trainer"]} \nHorario: {value["Horario"]} \nSalon: {value["Salon"]} \nRuta: {value["Ruta"]}')
             os.system('pause')
             return
     print("No se encontro ningun camper con ese id")
