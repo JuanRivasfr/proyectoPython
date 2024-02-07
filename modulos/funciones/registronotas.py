@@ -1,6 +1,6 @@
 import os
 import json
-
+#Registro prueba inicial
 def registropruebainicial():
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
@@ -32,6 +32,30 @@ def registropruebainicial():
             }
             camper[i]["Notas"].append(nota) 
             savejsoncamper(camper)
+
+#Registro modulos
+def registromodulos():
+    with open('camper.json', 'r') as json_file:
+        camper = json.load(json_file)
+        
+    with open('grupos.json', 'r') as json_file:
+        grupos = json.load(json_file)
+
+    id= int(input("Digite el id del camper a registrar la nota: "))
+    if value["Id"] == id:
+            if value["Estado"] != "No aprobado" and value["Estado"] != "Filtrado":
+                print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
+            else:
+                print("No es posible registrar al camper debido a su estado")
+                os.system('pause')
+                return
+            opc = input("Esta seguro que es el camper correcto?(S/N): ")
+            if opc == "N":
+                return
+            for i, value in enumerate(grupos):
+                
+        
+        
 
 def savejsoncamper(camper): 
     with open('camper.json', 'w') as json_file:
