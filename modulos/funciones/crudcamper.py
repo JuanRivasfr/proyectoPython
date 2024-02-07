@@ -44,7 +44,6 @@ def crearcamper(iaux = None):
                 return
     if iaux == None:
         camper.append(inf)
-        print(camper)
         print("El camper ha sido creado")
         savejson(camper)
         os.system('pause')
@@ -85,7 +84,6 @@ def actualizarcamper():
                 infaux = crearcamper(iaux)
                 camper[i] = infaux
                 print("El camper se ha modificado")
-                print(camper)
                 savejson(camper)
                 os.system('pause')
                 return

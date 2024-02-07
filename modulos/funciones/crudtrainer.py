@@ -29,7 +29,6 @@ def creartrainer(iaux = None):
             if (input("Desea agregar otro horario?(S/N)")) == "N":
                 break
         return arrayaux
-   
     inf = { 
         "Id" : int(input("Ingrese el id del trainer: ")),
         "Nombre": input("Ingrese el nombre del trainer: "),
@@ -54,7 +53,6 @@ def creartrainer(iaux = None):
             
     if iaux == None:
         trainer.append(inf)
-        print(trainer)
         print("El trainer ha sido creado")
         savejson(trainer)
         os.system('pause')
@@ -95,7 +93,6 @@ def actualizartrainer():
                 infaux = creartrainer(iaux)
                 trainer[i] = infaux
                 print("El trainer se ha modificado")
-                print(trainer)
                 savejson(trainer)
                 os.system('pause')
                 return

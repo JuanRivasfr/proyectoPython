@@ -1,6 +1,6 @@
 [
     {
-        "Nombre": "345",
+        "Nombre": "M3",
         "FPOO": [
             "INTRODUCCION A LA ALGORITMIA",
             "PSEINT",
@@ -17,12 +17,11 @@
             "C#"
         ],
         "BD": {
-            "BDP": "ADSAD",
-            "BDS": "ASD"
+            "BDP": "SQL",
+            "BDS": "ALSJH"
         },
         "BEND": [
-            "NETCORE",
-            "ASJH"
+            "NETCORE"
         ]
     }
 ]

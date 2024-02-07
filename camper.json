@@ -1,49 +1,17 @@
 [
     {
-        "Id": 12,
+        "Id": 1,
         "Nombre": "Juan",
         "Apellido": "Rivas",
         "Edad": 19,
-        "Estado": "No aprobado",
-        "Ruta": "345",
+        "Estado": "En riesgo",
+        "Ruta": "M3",
         "Grupo": "M4",
         "Notas": [
             {
-                "Prueba inicial": 23.0
+                "Prueba inicial": 72.5
             }
         ],
-        "Direccion": "asd",
-        "Telefono": [
-            []
-        ]
-    },
-    {
-        "Id": 34,
-        "Nombre": "Mateo",
-        "Apellido": "Hson",
-        "Edad": 19,
-        "Estado": "Pre-inscrito",
-        "Ruta": "345",
-        "Grupo": "M4",
-        "Notas": [
-            {
-                "Prueba inicial": 83.5
-            }
-        ],
-        "Direccion": "sad",
-        "Telefono": [
-            []
-        ]
-    },
-    {
-        "Id": 234,
-        "Nombre": "Mariana",
-        "Apellido": "ASJ",
-        "Edad": 19,
-        "Estado": "",
-        "Ruta": "",
-        "Grupo": "",
-        "Notas": [],
         "Direccion": "0",
         "Telefono": [
             []

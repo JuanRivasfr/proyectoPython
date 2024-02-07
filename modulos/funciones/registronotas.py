@@ -50,44 +50,51 @@ def registromodulos():
                     print("No es posible registrar al camper debido a su estado")
                     os.system('pause')
                     return
-                opc = input("Esta seguro que es el camper correcto?(S/N): ").upper()
-                if opc == "N":
+                opct = input("Esta seguro que es el camper correcto?(S/N): ").upper()
+                if opct == "N":
                     return
-                for i, value in enumerate(grupos):
-                    for i2, val in (grupos[i]["Estudiantes"]):
-                        if grupos[i]["Estudiantes"][i2]["Id"] == id:
-                            mod = grupos[i]["Modulo"]
-                            print(f'Notas a agregar en el modulo {mod}: ')
-                            pteorica = int(input("Ingrese la nota de la prueba teorica: "))
-                            ppractica = int(input("Ingrese la nota de la prueba practica: "))
-                            qyt = int(0)
-                            cont = int(0)
-                            promqyt = int(0)
-                            while True:
-                                qyt = int(input("Ingrese la nota de quices y trabajos: "))
-                                cont += 1
-                                promqyt += qyt
-                                opc = input("Desea agregar otra nota dentro quices y trabajos?(S/N): ").upper()
-                                if opc == "N":
-                                    break
-                            promqyt = promqyt / cont
-                            notasmod = (pteorica * 0.3) + (ppractica*0.6) + (promqyt*0.1)
-                            inf = {
-                                "modulo" : mod,
-                                "notas mod" : notasmod
-                            }
-                            grupos[i]["Estudiantes"][i2]["Notas"].append(inf)
-                            if notasmod > 60:
-                                for i3, valor in enumerate(camper):
-                                    camper[i3]["Estado"] = "En riesgo"
-                                print({f'El camper no aprobo el modulo de {mod}'})
-                                os.system('pause')
-                            else: 
-                                print(f'El camper aprobo el modulo de {mod}')
-                                os.system('pause')
-        
+                else:
+                    for i, value in enumerate(grupos):
+                        for i2, val in enumerate(grupos[i]["Estudiantes"]):
+                            if grupos[i]["Estudiantes"][i2]["Id"] == id:
+                                mod = grupos[i]["Modulo"]
+                                print(f'Notas a agregar en el modulo {mod}: ')
+                                pteorica = int(input("Ingrese la nota de la prueba teorica: "))
+                                ppractica = int(input("Ingrese la nota de la prueba practica: "))
+                                qyt = int(0)
+                                cont = int(0)
+                                promqyt = int(0)
+                                while True:
+                                    qyt = int(input("Ingrese la nota de quices y trabajos: "))
+                                    cont += 1
+                                    promqyt += qyt
+                                    opc = input("Desea agregar otra nota dentro quices y trabajos?(S/N): ").upper()
+                                    if opc == "N":
+                                        break
+                                promqyt = promqyt / cont
+                                notasmod = (pteorica * 0.3) + (ppractica*0.6) + (promqyt*0.1)
+                                inf = {
+                                    "modulo" : mod,
+                                    "notas mod" : notasmod
+                                }
+                                grupos[i]["Estudiantes"][i2]["Notas"].append(inf)
+                                if notasmod < 60:
+                                    for i3, valor in enumerate(camper):
+                                        camper[i3]["Estado"] = "En riesgo"
+                                    print({f'El camper no aprobo el modulo de {mod}'})
+                                    os.system('pause')
+                                else: 
+                                    print(f'El camper aprobo el modulo de {mod}')
+                                    os.system('pause')
+                                savejsoncamper(camper)
+                                savejsongrupos(grupos)
+            
         
 
 def savejsoncamper(camper): 
     with open('camper.json', 'w') as json_file:
         json.dump(camper, json_file, indent=4)
+
+def savejsongrupos(grupos):
+    with open('grupos.json', 'w') as json_file:
+        json.dump(grupos, json_file, indent=4)

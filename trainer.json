@@ -1,8 +1,8 @@
 [
     {
-        "Id": 123,
-        "Nombre": "Miguek",
-        "Apellido": "asd",
+        "Id": 12,
+        "Nombre": "Miguel",
+        "Apellido": "Castro",
         "Edad": 23,
         "HorariosD": [
             {
@@ -12,6 +12,10 @@
             {
                 "Horarios": "10-12AM",
                 "Disponible": "No"
+            },
+            {
+                "Horarios": "2-5PM",
+                "Disponible": "Si"
             }
         ],
         "Telefono": [],

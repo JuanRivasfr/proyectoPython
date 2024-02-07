@@ -1,27 +1,25 @@
 [
     {
         "Identificador": "M4",
-        "Inicio": "12/34/56",
-        "Final": "34/56/78",
+        "Inicio": "ASDSA",
+        "Final": "DSFDS",
         "Salon": "Sputnik",
         "Modulo": "FPOO",
         "Estudiantes": [
             {
-                "Id": 12,
+                "Id": 1,
                 "Nombre": "Juan",
                 "Apellido": "Rivas",
-                "Notas" : []
-            },
-            {
-                "Id": 34,
-                "Nombre": "Mateo",
-                "Apellido": "Hson",
-                "Notas" : []
-      2
-          }
+                "Notas": [
+                    {
+                        "modulo": "FPOO",
+                        "notas mod": 38.2
+                    }
+                ]
+            }
         ],
-        "Ruta": "345",
-        "Trainer": "Miguek",
+        "Ruta": "M3",
+        "Trainer": "Miguel",
         "Horario": "10-12AM"
     }
 ]

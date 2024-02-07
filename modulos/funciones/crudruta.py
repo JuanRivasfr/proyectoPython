@@ -90,7 +90,6 @@ def crearruta(iaux = None):
             
     if iaux == None:
         ruta.append(inf)
-        print(ruta)
         print("La ruta ha sido creada")
         savejson(ruta)
         os.system('pause')
@@ -205,7 +204,7 @@ def verunaruta():
                     print("----------------------")
             os.system('pause')
             return
-    print("No se encontro ningun camper con ese id")
+    print("No se encontro ninguna ruta con ese nombre")
     os.system('pause')
 #Guarda el json
 def savejson(ruta): 

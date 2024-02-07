@@ -181,7 +181,7 @@ def verungrupo():
             print(f'Identificador: {value["Identificador"]} \nTrainer: {value["Trainer"]} \nHorario: {value["Horario"]} \nSalon: {value["Salon"]} \nRuta: {value["Ruta"]}')
             os.system('pause')
             return
-    print("No se encontro ningun camper con ese id")
+    print("No se encontro ningun grupo con ese identificador")
     os.system('pause')
 #Guarda el json
 def savejson(grupos): 
