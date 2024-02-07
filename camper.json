@@ -22,10 +22,14 @@
         "Nombre": "Mateo",
         "Apellido": "Hson",
         "Edad": 19,
-        "Estado": "",
+        "Estado": "Pre-inscrito",
         "Ruta": "345",
         "Grupo": "M4",
-        "Notas": [],
+        "Notas": [
+            {
+                "Prueba inicial": 83.5
+            }
+        ],
         "Direccion": "sad",
         "Telefono": [
             []

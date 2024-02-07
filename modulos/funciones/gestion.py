@@ -29,7 +29,8 @@ def asignarestudiantes():
             inf = {
                 "Id" : idestudiante,
                 "Nombre" : nombreestudiante,
-                "Apellido" : apellidoestudiante
+                "Apellido" : apellidoestudiante,
+                "Notas" : []
             }
             if opc == "N":
                 return

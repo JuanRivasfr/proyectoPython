@@ -42,18 +42,49 @@ def registromodulos():
         grupos = json.load(json_file)
 
     id= int(input("Digite el id del camper a registrar la nota: "))
-    if value["Id"] == id:
-            if value["Estado"] != "No aprobado" and value["Estado"] != "Filtrado":
-                print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
-            else:
-                print("No es posible registrar al camper debido a su estado")
-                os.system('pause')
-                return
-            opc = input("Esta seguro que es el camper correcto?(S/N): ")
-            if opc == "N":
-                return
-            for i, value in enumerate(grupos):
-                
+    for index, valor in enumerate(camper):
+        if valor["Id"] == id:
+                if valor["Estado"] != "No aprobado" and valor["Estado"] != "Filtrado":
+                    print(f'Id :{valor["Id"]} \nNombre: {valor["Nombre"]} \nApellido: {valor["Apellido"]} \nEdad: {valor["Edad"]}')
+                else:
+                    print("No es posible registrar al camper debido a su estado")
+                    os.system('pause')
+                    return
+                opc = input("Esta seguro que es el camper correcto?(S/N): ").upper()
+                if opc == "N":
+                    return
+                for i, value in enumerate(grupos):
+                    for i2, val in (grupos[i]["Estudiantes"]):
+                        if grupos[i]["Estudiantes"][i2]["Id"] == id:
+                            mod = grupos[i]["Modulo"]
+                            print(f'Notas a agregar en el modulo {mod}: ')
+                            pteorica = int(input("Ingrese la nota de la prueba teorica: "))
+                            ppractica = int(input("Ingrese la nota de la prueba practica: "))
+                            qyt = int(0)
+                            cont = int(0)
+                            promqyt = int(0)
+                            while True:
+                                qyt = int(input("Ingrese la nota de quices y trabajos: "))
+                                cont += 1
+                                promqyt += qyt
+                                opc = input("Desea agregar otra nota dentro quices y trabajos?(S/N): ").upper()
+                                if opc == "N":
+                                    break
+                            promqyt = promqyt / cont
+                            notasmod = (pteorica * 0.3) + (ppractica*0.6) + (promqyt*0.1)
+                            inf = {
+                                "modulo" : mod,
+                                "notas mod" : notasmod
+                            }
+                            grupos[i]["Estudiantes"][i2]["Notas"].append(inf)
+                            if notasmod > 60:
+                                for i3, valor in enumerate(camper):
+                                    camper[i3]["Estado"] = "En riesgo"
+                                print({f'El camper no aprobo el modulo de {mod}'})
+                                os.system('pause')
+                            else: 
+                                print(f'El camper aprobo el modulo de {mod}')
+                                os.system('pause')
         
         
 

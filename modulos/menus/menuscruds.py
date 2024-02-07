@@ -4,7 +4,7 @@ from ..funciones.crudtrainer import creartrainer,eliminartrainer,actualizartrain
 from ..funciones.crudruta import crearruta, eliminarruta, actualizarruta, vertodasrutas, verunaruta
 from ..funciones.ceudgrupo import creargrupos, eliminargrupos, actualizargrupos, vertodosgrupos, verungrupo
 from ..funciones.gestion import asignarestudiantes
-from..funciones.registronotas import registropruebainicial
+from..funciones.registronotas import registropruebainicial, registromodulos
 #Menu Camper
 def mcamper():
     while(True):
@@ -118,7 +118,7 @@ def mnotas():
             case 1:
                 registropruebainicial()
             case 2:
-                registrarnotasmodulo()
+                registromodulos()
             case 3:
                 break
             case _:

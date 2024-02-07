@@ -19,7 +19,7 @@ def creargrupos(iaux = None):
         "Inicio" : input("Ingrese la fecha de inicio(AA/MM/DD): "),
         "Final" : input("Ingrese la fecha de finalizacion(AA/MM/DD): "),
         "Salon" : "",
-        "Modulo" : "Fundamentos de Programacion",
+        "Modulo" : "FPOO",
         "Estudiantes" : [],
         "Ruta" : ""
     }
