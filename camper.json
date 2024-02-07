@@ -4,10 +4,14 @@
         "Nombre": "Juan",
         "Apellido": "Rivas",
         "Edad": 19,
-        "Estado": "",
+        "Estado": "No aprobado",
         "Ruta": "345",
         "Grupo": "M4",
-        "Notas": [],
+        "Notas": [
+            {
+                "Prueba inicial": 23.0
+            }
+        ],
         "Direccion": "asd",
         "Telefono": [
             []
@@ -23,6 +27,20 @@
         "Grupo": "M4",
         "Notas": [],
         "Direccion": "sad",
+        "Telefono": [
+            []
+        ]
+    },
+    {
+        "Id": 234,
+        "Nombre": "Mariana",
+        "Apellido": "ASJ",
+        "Edad": 19,
+        "Estado": "",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [],
+        "Direccion": "0",
         "Telefono": [
             []
         ]

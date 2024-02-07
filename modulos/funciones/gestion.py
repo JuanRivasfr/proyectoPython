@@ -8,6 +8,11 @@ def asignarestudiantes():
     with open('grupos.json', 'r') as json_file:
         grupos = json.load(json_file)
     id = int(input("Digite el id del camper a matricular: "))
+    for index1, valor in enumerate(camper):
+        if valor["Id"] == id:
+            if camper[index1]["Estado"] != "Pre-inscrito":
+                print("El estado del camper no esta en Pre-inscrito, por lo que no es posible matricularlo")
+                return
     for i2, value1 in enumerate(grupos):
         for i3, value2 in enumerate(grupos[i2]["Estudiantes"]):
             if grupos[i2]["Estudiantes"][i3]["Id"] == id:

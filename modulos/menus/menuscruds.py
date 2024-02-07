@@ -4,6 +4,7 @@ from ..funciones.crudtrainer import creartrainer,eliminartrainer,actualizartrain
 from ..funciones.crudruta import crearruta, eliminarruta, actualizarruta, vertodasrutas, verunaruta
 from ..funciones.ceudgrupo import creargrupos, eliminargrupos, actualizargrupos, vertodosgrupos, verungrupo
 from ..funciones.gestion import asignarestudiantes
+from..funciones.registronotas import registropruebainicial
 #Menu Camper
 def mcamper():
     while(True):
@@ -108,18 +109,33 @@ def mgrupo():
             case _:
                 print("Opcion invalida")
                 mgrupo()
+#Menu Notas
+def mnotas():
+    while(True):
+        os.system('cls')
+        opc = int(input("1.REGISTRAR PRUEBA INICIAL \n2.REGISTRAR MODULO \n3.VOLVER \n:"))
+        match(opc):
+            case 1:
+                registropruebainicial()
+            case 2:
+                registrarnotasmodulo()
+            case 3:
+                break
+            case _:
+                print("Opcion invalida")
+                mnotas()
 #Segunda opcion Menu
 def menugestion():
     os.system('cls')
     while(True):
-        opc = int(input("1.CRUD GRUPO \n2.ASIGNAR ESTUDIANTES \n3.CRUD RUTAS \n4.VOLVER \n:"))
+        opc = int(input("1.CRUD GRUPO \n2.ASIGNAR ESTUDIANTES \n3.REGISTRO DE NOTAS \n4.VOLVER \n:"))
         match(opc):
             case 1:
                 mgrupo()
             case 2:
                 asignarestudiantes()
             case 3:
-                pass
+                mnotas()
             case 4:
                 break
             case _:
