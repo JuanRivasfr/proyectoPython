@@ -1,6 +1,7 @@
 import os
 import json
 from .menuscruds import menucr,menugestion
+from .menumostrar import menumostrar
 
 def menu():
     
@@ -32,7 +33,7 @@ def menu():
                     else:        
                         menugestion()
                 case 3:
-                    pass
+                    menumostrar()
                 case 4:
                     break
                 case _:

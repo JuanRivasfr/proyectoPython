@@ -8,17 +8,12 @@ def registropruebainicial():
     for i, value in enumerate(camper):
         if value["Estado"] == "":
             if value["Id"] == id:
-                if value["Estado"] == "":
-                    print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
-                else:
-                    print("El camper ya cuenta con el registro de prueba inicial")
-                    os.system('pause')
-                    return
+                print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
                 opc = input("Desea registrar la nota a este camper?(S/N)").upper()
                 if opc == "N":
                     return
                 nteorica = int(input("Ingrese la calificacion de la nota teorica: "))
-                npractica = int(input("Ingrese la calificacion de la nota teorica: "))
+                npractica = int(input("Ingrese la calificacion de la nota practica: "))
                 prom = (nteorica+npractica)/2
                 if prom >= 60:
                     print("El camper aprobo la prueba inicial, por lo su estado es pre-inscrito")
@@ -37,6 +32,38 @@ def registropruebainicial():
             print("No es posible registrar la prueba inicial debido al estado del camper")
             os.system('pause')
 
+#Registro prueba fpoo
+def registropruebafpoo():
+    with open('camper.json', 'r') as json_file:
+        camper = json.load(json_file)
+    id = int(input("Ingrese el id del camper a registrar la prueba fpoo: "))
+    for i, value in enumerate(camper):
+        if value["Estado"] == "Pre-inscrito":
+            if value["Id"] == id:
+                print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
+                opc = input("Desea registrar la nota a este camper?(S/N)").upper()
+                if opc == "N":
+                    return
+                nteorica = int(input("Ingrese la calificacion de la nota teorica: "))
+                npractica = int(input("Ingrese la calificacion de la nota practica: "))
+                prom = (nteorica+npractica)/2
+                if prom >= 60:
+                    print("El camper aprobo la prueba de fundamentos de programacion, por lo su estado es inscrito")
+                    camper[i]["Estado"] = "Inscrito"
+                    os.system('pause')
+                else:
+                    print("El camper no aprobo la prueba de fundamentos de programacion")
+                    camper[i]["Estado"] = "Inscrito"
+                    os.system('pause')
+                nota = {
+                    "Prueba fpoo" : prom
+                }
+                camper[i]["Notas"].append(nota) 
+                savejsoncamper(camper)
+        else: 
+            print("No es posible registrar la prueba inicial debido al estado del camper")
+            os.system('pause')
+
 #Registro modulos
 def registromodulos():
     with open('camper.json', 'r') as json_file:
@@ -48,7 +75,7 @@ def registromodulos():
     id= int(input("Digite el id del camper a registrar la nota: "))
     for index, valor in enumerate(camper):
         if valor["Id"] == id:
-                if valor["Estado"] != "No aprobado" and valor["Estado"] != "Filtrado" and valor["Estado"] != "":
+                if valor["Estado"] != "No aprobado" and valor["Estado"] != "Bajo rendimiento" and valor["Estado"] != "":
                     print(f'Id :{valor["Id"]} \nNombre: {valor["Nombre"]} \nApellido: {valor["Apellido"]} \nEdad: {valor["Edad"]}')
                 else:
                     print("No es posible registrar al camper debido a su estado")
@@ -91,7 +118,7 @@ def registromodulos():
                                     for i3, valor1 in enumerate(camper):
                                         if valor1["Id"] == id:
                                             if valor1["Estado"] == "En riesgo":
-                                                camper[i3]["Estado"] = "Filtrado"
+                                                camper[i3]["Estado"] = "Bajo rendimiento"
                                             else:
                                                 camper[i3]["Estado"] = "En riesgo"
                                     print(f'El camper no aprobo el modulo de {mod}')
@@ -139,13 +166,13 @@ def registromodulos():
                     contador += 1
                     if contador == len(grupos[i]["Estudiantes"][i2]["Notas"]):
                         grupos[i]["Modulo"] = "BEND"
-    #Eliminar los que tienen estado filtrado
+    #Eliminar los que tienen estado bajo rendimiento
     for inde, valo in enumerate(grupos):
         for ind, valora in enumerate(grupos[inde]["Estudiantes"]):
             for ai, valf in enumerate(camper):
-                if grupos[inde]["Estudiantes"][ind]["Id"] == id and valf["Id"] == id and valf["Estado"] == "Filtrado":
+                if grupos[inde]["Estudiantes"][ind]["Id"] == id and valf["Id"] == id and valf["Estado"] == "Bajo rendimiento":
                     grupos[inde]["Estudiantes"].pop(ind)
-                    print("El camper quedo en estado filtrado, por lo que fue eliminado del grupo")
+                    print("El camper quedo en estado bajo rendimiento, por lo que fue eliminado del grupo")
                     return
     savejsoncamper(camper)
     savejsongrupos(grupos)
