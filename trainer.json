@@ -1,8 +1,8 @@
 [
     {
-        "Id": 12,
+        "Id": 1,
         "Nombre": "Miguel",
-        "Apellido": "Castro",
+        "Apellido": "Garcia",
         "Edad": 23,
         "HorariosD": [
             {
@@ -18,7 +18,33 @@
                 "Disponible": "Si"
             }
         ],
-        "Telefono": [],
+        "Telefono": [
+            {
+                "Celular": 213213
+            }
+        ],
+        "Rutas": []
+    },
+    {
+        "Id": 2,
+        "Nombre": "Jholver",
+        "Apellido": "HGSD",
+        "Edad": 19,
+        "HorariosD": [
+            {
+                "Horarios": "6-9AM",
+                "Disponible": "Si"
+            },
+            {
+                "Horarios": "10-12AM",
+                "Disponible": "No"
+            }
+        ],
+        "Telefono": [
+            {
+                "Fijo": 234324
+            }
+        ],
         "Rutas": []
     }
 ]

@@ -1,24 +1,35 @@
 [
     {
-        "Identificador": "M4",
-        "Inicio": "ASDSA",
-        "Final": "DSFDS",
-        "Salon": "Sputnik",
-        "Modulo": "FPOO",
+        "Identificador": "M3",
+        "Inicio": "12/34/56",
+        "Final": "23/45/67",
+        "Salon": "Artemis",
+        "Modulo": "PWEB",
         "Estudiantes": [
             {
-                "Id": 1,
-                "Nombre": "Juan",
-                "Apellido": "Rivas",
+                "Id": 2,
+                "Nombre": "Mariana",
+                "Apellido": "Cifuentes",
                 "Notas": [
                     {
                         "modulo": "FPOO",
-                        "notas mod": 38.2
+                        "notas mod": 71.19999999999999
                     }
                 ]
             }
         ],
-        "Ruta": "M3",
+        "Ruta": "NodeJss",
+        "Trainer": "Jholver",
+        "Horario": "10-12AM"
+    },
+    {
+        "Identificador": "M2",
+        "Inicio": "12/34/56",
+        "Final": "12/34/56",
+        "Salon": "Apolo",
+        "Modulo": "FPOO",
+        "Estudiantes": [],
+        "Ruta": "NodeJss",
         "Trainer": "Miguel",
         "Horario": "10-12AM"
     }

@@ -113,10 +113,16 @@ def mgrupo():
 def mnotas():
     while(True):
         os.system('cls')
-        opc = int(input("1.REGISTRAR PRUEBA INICIAL \n2.REGISTRAR MODULO \n3.VOLVER \n:"))
+        opc = int(input("1.REGISTRAR PRUEBAS \n2.REGISTRAR NOTA DE MODULO \n3.VOLVER \n:"))
         match(opc):
             case 1:
-                registropruebainicial()
+                print("1.REGISTRO PRUEBA INICIAL \n2.REGISTRO PRUEBA FPOO")
+                opc1 = input(": ")
+                match(opc1):
+                    case 1:
+                        registropruebainicial()
+                    case 2:
+                        registropruebapoo()
             case 2:
                 registromodulos()
             case 3:
@@ -128,7 +134,7 @@ def mnotas():
 def menugestion():
     os.system('cls')
     while(True):
-        opc = int(input("1.CRUD GRUPO \n2.ASIGNAR ESTUDIANTES \n3.REGISTRO DE NOTAS \n4.VOLVER \n:"))
+        opc = int(input("1.ADMINISTRACION GRUPOS \n2.ASIGNAR ESTUDIANTES A GRUPOS \n3.REGISTRO DE NOTAS \n4.VOLVER \n:"))
         match(opc):
             case 1:
                 mgrupo()

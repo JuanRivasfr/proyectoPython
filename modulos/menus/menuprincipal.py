@@ -3,14 +3,7 @@ import json
 from .menuscruds import menucr,menugestion
 
 def menu():
-    with open('camper.json', 'r') as json_file:
-        camper = json.load(json_file)
-
-    with open('trainer.json', 'r') as json_file1:
-        trainer = json.load(json_file1)
-
-    with open('rutas.json', 'r') as json_file2:
-        ruta = json.load(json_file2)
+    
 
     
     while(True):
@@ -19,14 +12,23 @@ def menu():
 +  Menu Registro CampusLands  +
 +++++++++++++++++++++++++++++++""")
         try:
-            opc = int(input("1.CRUDS \n2.GESTOR DE MATRICULAS \n3.MOSTRAR R \n4.SALIR \n:"))
+            opc = int(input("1.ADMINISTRACION DE TRAINERS, CAMPERS Y RUTAS \n2.GESTION DE NOTAS Y GRUPOS \n3.MOSTRAR REGISTROS \n4.SALIR \n:"))
             match(opc):
                 case 1:
                     menucr()
                 case 2:
-                    if camper == None or trainer == None or ruta == None:
+                    with open('camper.json', 'r') as json_file:
+                        camper = json.load(json_file)
+
+                    with open('trainer.json', 'r') as json_file1:
+                        trainer = json.load(json_file1)
+
+                    with open('rutas.json', 'r') as json_file2:
+                        ruta = json.load(json_file2)
+                        
+                    if len(camper) == 0 or len(trainer) == 0 or len(ruta) == 0:
                         print("Primero debe crear una ruta, camper y trainer")
-                        os.sytem('pause')
+                        os.system('pause')
                     else:        
                         menugestion()
                 case 3:

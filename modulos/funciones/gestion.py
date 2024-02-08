@@ -22,7 +22,7 @@ def asignarestudiantes():
     for i, value in enumerate(camper):
         if value["Id"] == id:
             print(f'Id: {value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
-            opc = input("Esta seguro que desea agregar el camper al grupor?(S/N): ").upper()
+            opc = input("Esta seguro que desea agregar el camper al grupo?(S/N): ").upper()
             idestudiante = value.get("Id")
             nombreestudiante = value.get("Nombre")
             apellidoestudiante = value.get("Apellido")
@@ -50,6 +50,10 @@ def asignarestudiantes():
                 savejson1(grupos)
                 print("Se ha añadido el camper")
                 os.system('pause')
+            elif value["Modulo"] != "FPOO":
+                print("No es posible unir al camper ya que el grupo ya esta en un modulo difererente al primero")
+                os.system('pause')
+                
             else: 
                 print("El grupo esta lleno")
                 os.system('pause')

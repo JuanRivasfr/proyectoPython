@@ -3,32 +3,44 @@
         "Id": 1,
         "Nombre": "Juan",
         "Apellido": "Rivas",
-        "Edad": 19,
-        "Estado": "En riesgo",
-        "Ruta": "M3",
-        "Grupo": "M4",
+        "Edad": 18,
+        "Estado": "Filtrado",
+        "Ruta": "NodeJss",
+        "Grupo": "M3",
         "Notas": [
             {
-                "Prueba inicial": 72.5
+                "Prueba inicial": 61.5
             }
         ],
-        "Direccion": "0",
+        "Direccion": "cr 22",
         "Telefono": [
-            []
+            [
+                {
+                    "Fijo": 123124
+                }
+            ]
         ]
     },
     {
-        "Id": 3,
-        "Nombre": "SAJDSA",
-        "Apellido": "JAS",
-        "Edad": 19,
-        "Estado": "",
-        "Ruta": "",
-        "Grupo": "",
-        "Notas": [],
-        "Direccion": "0",
+        "Id": 2,
+        "Nombre": "Mariana",
+        "Apellido": "Cifuentes",
+        "Edad": 18,
+        "Estado": "Pre-inscrito",
+        "Ruta": "NodeJss",
+        "Grupo": "M3",
+        "Notas": [
+            {
+                "Prueba inicial": 78.0
+            }
+        ],
+        "Direccion": "sad",
         "Telefono": [
-            []
+            [
+                {
+                    "Celular": 12312321
+                }
+            ]
         ]
     }
 ]
