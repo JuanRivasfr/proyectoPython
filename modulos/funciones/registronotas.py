@@ -81,14 +81,50 @@ def registromodulos():
                                 if notasmod < 60:
                                     for i3, valor in enumerate(camper):
                                         camper[i3]["Estado"] = "En riesgo"
-                                    print({f'El camper no aprobo el modulo de {mod}'})
+                                    print(f'El camper no aprobo el modulo de {mod}')
                                     os.system('pause')
                                 else: 
                                     print(f'El camper aprobo el modulo de {mod}')
                                     os.system('pause')
                                 savejsoncamper(camper)
                                 savejsongrupos(grupos)
-            
+    
+    #Cambia de FPOO A PWEB
+    for i, value in enumerate(grupos):
+        for i2, valu in enumerate(grupos[i]["Estudiantes"]):
+            contador = int(0)
+            for i3, val in enumerate(grupos[i]["Estudiantes"][i2]["Notas"]):
+                if grupos[i]["Estudiantes"][i2]["Notas"][i3]["modulo"] == "FPOO":
+                    contador += 1
+                    if contador == len(grupos[i]["Estudiantes"][i2]["Notas"]):
+                        grupos[i]["Modulo"] = "PWEB"
+    #Cambia de PWEB a PFORMAL
+    for i, value in enumerate(grupos):
+        for i2, valu in enumerate(grupos[i]["Estudiantes"]):
+            contador = int(0)
+            for i3, val in enumerate(grupos[i]["Estudiantes"][i2]["Notas"]):
+                if grupos[i]["Estudiantes"][i2]["Notas"][i3]["modulo"] == "PWEB":
+                    contador += 1
+                    if contador == len(grupos[i]["Estudiantes"][i2]["Notas"]):
+                        grupos[i]["Modulo"] = "PFORMAL"
+    #Cambia de PFORMAL A BD
+    for i, value in enumerate(grupos):
+        for i2, valu in enumerate(grupos[i]["Estudiantes"]):
+            contador = int(0)
+            for i3, val in enumerate(grupos[i]["Estudiantes"][i2]["Notas"]):
+                if grupos[i]["Estudiantes"][i2]["Notas"][i3]["modulo"] == "PFORMAL":
+                    contador += 1
+                    if contador == len(grupos[i]["Estudiantes"][i2]["Notas"]):
+                        grupos[i]["Modulo"] = "BD"
+    #Cambia de BD a BEND
+    for i, value in enumerate(grupos):
+        for i2, valu in enumerate(grupos[i]["Estudiantes"]):
+            contador = int(0)
+            for i3, val in enumerate(grupos[i]["Estudiantes"][i2]["Notas"]):
+                if grupos[i]["Estudiantes"][i2]["Notas"][i3]["modulo"] == "BD":
+                    contador += 1
+                    if contador == len(grupos[i]["Estudiantes"][i2]["Notas"]):
+                        grupos[i]["Modulo"] = "BEND"
         
 
 def savejsoncamper(camper): 
