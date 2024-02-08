@@ -7,7 +7,7 @@
         "HorariosD": [
             {
                 "Horarios": "6-9AM",
-                "Disponible": "Si"
+                "Disponible": "No"
             },
             {
                 "Horarios": "10-12AM",
@@ -23,7 +23,11 @@
                 "Celular": 213213
             }
         ],
-        "Rutas": []
+        "Rutas": [
+            "M4",
+            "1",
+            "RT"
+        ]
     },
     {
         "Id": 2,
@@ -33,7 +37,7 @@
         "HorariosD": [
             {
                 "Horarios": "6-9AM",
-                "Disponible": "Si"
+                "Disponible": "No"
             },
             {
                 "Horarios": "10-12AM",
@@ -45,6 +49,10 @@
                 "Fijo": 234324
             }
         ],
-        "Rutas": []
+        "Rutas": [
+            "Miguel",
+            "M4",
+            "1"
+        ]
     }
 ]

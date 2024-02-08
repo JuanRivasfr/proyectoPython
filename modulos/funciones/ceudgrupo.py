@@ -23,10 +23,20 @@ def creargrupos(iaux = None):
         "Estudiantes" : [],
         "Ruta" : ""
     }
-    print("Que trainer desde agregar a la ruta?")
+    print("Que trainer desde agregar al grupo?")
     for i, value in enumerate(trainer):
         print(f'{i+1}. {value["Nombre"]}')
     auxx = int(input(":"))
+    contador = int(0)
+    for i, value in enumerate(trainer):
+        if (i + 1) == auxx:
+            for i1, val in enumerate(value["HorariosD"]):
+                if val["Disponible"] == "No":
+                    contador += 1
+                    if contador == len(value["HorariosD"]):
+                        print("El trainer no tiene horarios disponibles")
+                        os.system('pause')
+                        return
     for i, value in enumerate(trainer):
         if (i + 1) == auxx:
             nom = value["Nombre"]
@@ -36,6 +46,7 @@ def creargrupos(iaux = None):
                     print(f'{i1+1}. {val["Horarios"]}')
                 else:
                     print(f'{i1+1}. {val["Horarios"]} (OCUPADO)')
+            trainer[i]["Rutas"].append(inf["Identificador"])
     opc = int(input("¿Que horario desea agregar?\n:"))
     for i, value in enumerate(trainer):
         if (i + 1) == auxx:

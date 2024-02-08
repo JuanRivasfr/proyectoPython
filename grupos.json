@@ -1,36 +1,52 @@
 [
     {
-        "Identificador": "M3",
-        "Inicio": "12/34/56",
-        "Final": "23/45/67",
-        "Salon": "Artemis",
-        "Modulo": "PWEB",
+        "Identificador": "RT",
+        "Inicio": "12",
+        "Final": "12",
+        "Salon": "Apolo",
+        "Modulo": "BD",
         "Estudiantes": [
             {
-                "Id": 2,
-                "Nombre": "Mariana",
-                "Apellido": "Cifuentes",
+                "Id": 324,
+                "Nombre": "asd",
+                "Apellido": "asd",
                 "Notas": [
                     {
                         "modulo": "FPOO",
-                        "notas mod": 71.19999999999999
+                        "notas mod": 61.5
+                    },
+                    {
+                        "modulo": "PWEB",
+                        "notas mod": 19.7
+                    },
+                    {
+                        "modulo": "PFORMAL",
+                        "notas mod": 75.8
+                    }
+                ]
+            },
+            {
+                "Id": 23,
+                "Nombre": "sad",
+                "Apellido": "asd",
+                "Notas": [
+                    {
+                        "modulo": "FPOO",
+                        "notas mod": 76.89999999999999
+                    },
+                    {
+                        "modulo": "PWEB",
+                        "notas mod": 77.99999999999999
+                    },
+                    {
+                        "modulo": "PFORMAL",
+                        "notas mod": 30.699999999999996
                     }
                 ]
             }
         ],
         "Ruta": "NodeJss",
-        "Trainer": "Jholver",
-        "Horario": "10-12AM"
-    },
-    {
-        "Identificador": "M2",
-        "Inicio": "12/34/56",
-        "Final": "12/34/56",
-        "Salon": "Apolo",
-        "Modulo": "FPOO",
-        "Estudiantes": [],
-        "Ruta": "NodeJss",
         "Trainer": "Miguel",
-        "Horario": "10-12AM"
+        "Horario": "6-9AM"
     }
 ]

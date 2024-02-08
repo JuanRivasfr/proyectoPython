@@ -105,7 +105,14 @@ def vertodostrainers():
     with open('trainer.json', 'r') as json_file:
         trainer = json.load(json_file)
     for i, value in enumerate(trainer):
-        print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]} \n---------------------')
+        print(f'Id :{value["Id"]} \nNombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
+        print("Horarios: ")
+        for i2, valu in enumerate(trainer[i]["HorariosD"]):
+            print(trainer[i]["HorariosD"][i2]["Horarios"])
+        print("Grupos: ")
+        for i2, valu in enumerate(trainer[i]["Rutas"]):
+            print(trainer[i]["Rutas"][i2])
+        print("----------------------------")
     os.system('pause')
 #Ver un solo trainer               
 def veruntrainer():

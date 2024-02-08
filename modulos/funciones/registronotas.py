@@ -28,9 +28,9 @@ def registropruebainicial():
                 }
                 camper[i]["Notas"].append(nota) 
                 savejsoncamper(camper)
-        else: 
-            print("No es posible registrar la prueba inicial debido al estado del camper")
-            os.system('pause')
+                return
+    print("No es posible registrar la prueba inicial debido al estado del camper")
+    os.system('pause')
 
 #Registro prueba fpoo
 def registropruebafpoo():
@@ -60,9 +60,9 @@ def registropruebafpoo():
                 }
                 camper[i]["Notas"].append(nota) 
                 savejsoncamper(camper)
-        else: 
-            print("No es posible registrar la prueba inicial debido al estado del camper")
-            os.system('pause')
+                return
+    print("No es posible registrar la prueba inicial debido al estado del camper")
+    os.system('pause')
 
 #Registro modulos
 def registromodulos():
@@ -126,9 +126,6 @@ def registromodulos():
                                 else: 
                                     print(f'El camper aprobo el modulo de {mod}')
                                     os.system('pause')
-                            else: 
-                                print("El camper no se encuentra matriculado a ningun grupo")
-                                os.system('pause')
                                 
     #Cambia de FPOO A PWEB
     contador = int(0)
@@ -173,6 +170,9 @@ def registromodulos():
                 if grupos[inde]["Estudiantes"][ind]["Id"] == id and valf["Id"] == id and valf["Estado"] == "Bajo rendimiento":
                     grupos[inde]["Estudiantes"].pop(ind)
                     print("El camper quedo en estado bajo rendimiento, por lo que fue eliminado del grupo")
+                    os.system('pause')
+                    savejsoncamper(camper)
+                    savejsongrupos(grupos)
                     return
     savejsoncamper(camper)
     savejsongrupos(grupos)

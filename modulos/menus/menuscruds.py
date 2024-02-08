@@ -117,7 +117,7 @@ def mnotas():
         match(opc):
             case 1:
                 print("1.REGISTRO PRUEBA INICIAL \n2.REGISTRO PRUEBA FPOO")
-                opc1 = input(": ")
+                opc1 = int(input(": "))
                 match(opc1):
                     case 1:
                         registropruebainicial()

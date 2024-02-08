@@ -4,9 +4,9 @@
         "Nombre": "Juan",
         "Apellido": "Rivas",
         "Edad": 18,
-        "Estado": "Inscrito",
+        "Estado": "Bajo rendimiento",
         "Ruta": "NodeJss",
-        "Grupo": "M3",
+        "Grupo": "1",
         "Notas": [
             {
                 "Prueba inicial": 61.5
@@ -26,12 +26,15 @@
         "Nombre": "Mariana",
         "Apellido": "Cifuentes",
         "Edad": 18,
-        "Estado": "Inscrito",
+        "Estado": "Bajo rendimiento",
         "Ruta": "NodeJss",
-        "Grupo": "M3",
+        "Grupo": "RT",
         "Notas": [
             {
                 "Prueba inicial": 78.0
+            },
+            {
+                "Prueba fpoo": 78.0
             }
         ],
         "Direccion": "sad",
@@ -41,6 +44,42 @@
                     "Celular": 12312321
                 }
             ]
+        ]
+    },
+    {
+        "Id": 324,
+        "Nombre": "asd",
+        "Apellido": "asd",
+        "Edad": 89,
+        "Estado": "En riesgo",
+        "Ruta": "NodeJss",
+        "Grupo": "RT",
+        "Notas": [
+            {
+                "Prueba inicial": 67.0
+            }
+        ],
+        "Direccion": "0",
+        "Telefono": [
+            []
+        ]
+    },
+    {
+        "Id": 23,
+        "Nombre": "sad",
+        "Apellido": "asd",
+        "Edad": 34,
+        "Estado": "En riesgo",
+        "Ruta": "NodeJss",
+        "Grupo": "RT",
+        "Notas": [
+            {
+                "Prueba inicial": 67.0
+            }
+        ],
+        "Direccion": "asd",
+        "Telefono": [
+            []
         ]
     }
 ]
