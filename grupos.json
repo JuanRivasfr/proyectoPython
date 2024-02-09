@@ -1,4 +1,13 @@
-
 [
-    
+    {
+        "Identificador": "M4",
+        "Salon": "Artemis",
+        "Modulo": "FPOO",
+        "Estudiantes": [],
+        "Ruta": "ASD",
+        "Inicio": "12",
+        "Final": "12",
+        "Trainer": "LJASDSA",
+        "Horario": "2-5PM"
+    }
 ]
