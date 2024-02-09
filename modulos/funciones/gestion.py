@@ -3,6 +3,7 @@ import json
 
 #Asignar estudiantes a los salones
 def asignarestudiantes():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
     with open('grupos.json', 'r') as json_file:

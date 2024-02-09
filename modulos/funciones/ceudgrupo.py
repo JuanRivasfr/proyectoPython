@@ -4,7 +4,7 @@ import json
 
 #Crea grupos
 def creargrupos(iaux = None):
-
+    os.system('cls')
     with open('grupos.json', 'r') as json_file:
         grupos = json.load(json_file)
 
@@ -98,6 +98,7 @@ def creargrupos(iaux = None):
         return inf
 #Elimina Grupos
 def eliminargrupos():
+    os.system('cls')
     with open('grupos.json', 'r') as json_file:
         grupos = json.load(json_file)
 
@@ -130,6 +131,7 @@ def eliminargrupos():
     os.system('pause')
 #Actualiza Grupos
 def actualizargrupos():
+    os.system('cls')
     with open('grupos.json', 'r') as json_file:
         grupos = json.load(json_file)
 
@@ -164,6 +166,7 @@ def actualizargrupos():
     os.system('pause')
 #Ver todos los grupos
 def vertodosgrupos():
+    os.system('cls')
     with open('grupos.json', 'r') as json_file:
         grupos = json.load(json_file)
 
@@ -178,6 +181,7 @@ def vertodosgrupos():
     os.system('pause')
 #Ver una ruta             
 def verungrupo():
+    os.system('cls')
     with open('grupos.json', 'r') as json_file:
         grupos = json.load(json_file)
 

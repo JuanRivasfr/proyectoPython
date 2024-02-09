@@ -3,6 +3,7 @@ import json
 
 #Crea trainer
 def creartrainer(iaux = None):
+    os.system('cls')
     with open('trainer.json', 'r') as json_file:
         trainer = json.load(json_file)
 
@@ -61,6 +62,7 @@ def creartrainer(iaux = None):
         return inf
 #Elimina trainer
 def eliminartrainer():
+    os.system('cls')
     with open('trainer.json', 'r') as json_file:
         trainer = json.load(json_file)
     id = int(input("Ingrese el id del camper a trainer: "))
@@ -80,6 +82,7 @@ def eliminartrainer():
     os.system('pause')
 #Actualiza trainer
 def actualizartrainer():
+    os.system('cls')
     with open('trainer.json', 'r') as json_file:
         trainer = json.load(json_file)
     os.system('cls')
@@ -102,6 +105,7 @@ def actualizartrainer():
     os.system('pause')
 #Ver todos los trainer
 def vertodostrainers():
+    os.system('cls')
     with open('trainer.json', 'r') as json_file:
         trainer = json.load(json_file)
     for i, value in enumerate(trainer):
@@ -116,6 +120,7 @@ def vertodostrainers():
     os.system('pause')
 #Ver un solo trainer               
 def veruntrainer():
+    os.system('cls')
     with open('trainer.json', 'r') as json_file:
         trainer = json.load(json_file)
     id = int(input("Ingrese el id del trainer a buscar: "))

@@ -2,6 +2,7 @@ import os
 import json
 #Registro prueba inicial
 def registropruebainicial():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
     id = int(input("Ingrese el id del camper a registrar la prueba inicial: "))
@@ -34,6 +35,7 @@ def registropruebainicial():
 
 #Registro prueba fpoo
 def registropruebafpoo():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
     id = int(input("Ingrese el id del camper a registrar la prueba fpoo: "))
@@ -66,6 +68,7 @@ def registropruebafpoo():
 
 #Registro modulos
 def registromodulos():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
         

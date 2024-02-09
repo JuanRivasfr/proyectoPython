@@ -3,6 +3,7 @@ import json
 
 #Crea camper
 def crearcamper(iaux = None):
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
 
@@ -52,6 +53,7 @@ def crearcamper(iaux = None):
         return inf
 #Elimina Camper
 def eliminarcamper():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
     id = int(input("Ingrese el id del camper a eliminar: "))
@@ -71,6 +73,7 @@ def eliminarcamper():
     os.system('pause')
 #Actualiza Camper
 def actualizarcamper():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
     os.system('cls')
@@ -93,6 +96,7 @@ def actualizarcamper():
     os.system('pause')
 #Ver todos los campers
 def vertodoscampers():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
     for i, value in enumerate(camper):
@@ -100,6 +104,7 @@ def vertodoscampers():
     os.system('pause')
 #Ver un solo camper               
 def veruncamper():
+    os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
     id = int(input("Ingrese el id del camper a buscar: "))

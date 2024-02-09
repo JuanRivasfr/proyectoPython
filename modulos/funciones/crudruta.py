@@ -3,6 +3,7 @@ import json
 
 #Crea ruta
 def crearruta(iaux = None):
+    os.system('cls')
     with open('rutas.json', 'r') as json_file:
         ruta = json.load(json_file)
 
@@ -98,6 +99,7 @@ def crearruta(iaux = None):
         return inf
 #Elimina ruta
 def eliminarruta():
+    os.system('cls')
     with open('rutas.json', 'r') as json_file:
         ruta = json.load(json_file)
     nombre = input("Ingrese el nombre de la ruta a eliminar: ")
@@ -129,6 +131,7 @@ def eliminarruta():
     os.system('pause')
 #Actualiza ruta
 def actualizarruta():
+    os.system('cls')
     with open('rutas.json', 'r') as json_file:
         ruta = json.load(json_file)
     os.system('cls')
@@ -163,6 +166,7 @@ def actualizarruta():
     os.system('pause')
 #Ver todos las rutas
 def vertodasrutas():
+    os.system('cls')
     with open('rutas.json', 'r') as json_file:
         ruta = json.load(json_file)
     os.system('cls')
@@ -183,6 +187,7 @@ def vertodasrutas():
     os.system('pause')
 #Ver una sola ruta               
 def verunaruta():
+    os.system('cls')
     with open('rutas.json', 'r') as json_file:
         ruta = json.load(json_file)
     os.system('cls')
