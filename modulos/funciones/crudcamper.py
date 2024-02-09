@@ -6,50 +6,80 @@ def crearcamper(iaux = None):
     os.system('cls')
     with open('camper.json', 'r') as json_file:
         camper = json.load(json_file)
-
-    def acudiente(edad):
-        nece = input("¿El camper tiene alguna necesidad especial?(S/N) \n").upper()
-        if edad < 18 or nece == "S":
-            infaux = {
-                "Nombre" : input("Ingrese el nombre del acudiente: "),
-                "Id" : input("Ingrese el id del acudiente: ")
-            }
-            return infaux
-        return None
-        
-    inf = { 
-        "Id" : int(input("Ingrese el id del camper: ")),
-        "Nombre": input("Ingrese el nombre del camper: "),
-        "Apellido" : input("Ingrese el apellido del camper: "),
-        "Edad" : int(input("Ingrese la edad del camper: ")),
-        "Estado" : "",
-        "Ruta" : "",
-        "Grupo" : "",
-        "Notas" : [] 
-    }
-    inf["Direccion"] = input("Ingrese la direccion del camper: ")
-    inf["Telefono"] = [
-            {
-                f"{'Fijo' if(int(input('0. Celular 1. Fijo : '))) else 'Celular'}":
-                int(input(f'Numero de contacto {x+1}: '))
-            }
-            for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
-        ],
-    inf["Acudiente"] = acudiente(inf["Edad"])
-    if inf["Acudiente"] == None:
-        del inf["Acudiente"]
-    for i, value in enumerate(camper):
-            if value["Id"] == inf["Id"]:
-                print("Ya hay un registro creado con el mismo ID, por favor intente con otro")
-                os.system('pause')
-                return
     if iaux == None:
+
+        def acudiente(edad):
+            nece = input("¿El camper tiene alguna necesidad especial?(S/N) \n").upper()
+            if edad < 18 or nece == "S":
+                infaux = {
+                    "Nombre" : input("Ingrese el nombre del acudiente: "),
+                    "Id" : input("Ingrese el id del acudiente: ")
+                }
+                return infaux
+            return None
+            
+        inf = { 
+            "Id" : int(input("Ingrese el id del camper: ")),
+            "Estado" : "",
+            "Ruta" : "",
+            "Grupo" : "",
+            "Notas" : [] 
+        }
+        for i, value in enumerate(camper):
+                if value["Id"] == inf["Id"]:
+                    print("Ya hay un registro creado con el mismo ID, por favor intente con otro")
+                    os.system('pause')
+                    return
+        inf["Nombre"] = input("Ingrese el nombre del camper: ")
+        inf["Apellido"] = input("Ingrese el apellido del camper: ")
+        inf["Edad"] = int(input("Ingrese la edad del camper: "))
+        inf["Telefono"] = [
+                {
+                    f"{'Fijo' if(int(input('0. Celular 1. Fijo : '))) else 'Celular'}":
+                    int(input(f'Numero de contacto {x+1}: '))
+                }
+                for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
+            ],
+        inf["Acudiente"] = acudiente(inf["Edad"])
+        if inf["Acudiente"] == None:
+            del inf["Acudiente"]
         camper.append(inf)
         print("El camper ha sido creado")
         savejson(camper)
         os.system('pause')
         return
     else :
+        def acudiente(edad):
+            nece = input("¿El camper tiene alguna necesidad especial?(S/N) \n").upper()
+            if edad < 18 or nece == "S":
+                infaux = {
+                    "Nombre" : input("Ingrese el nombre del acudiente: "),
+                    "Id" : input("Ingrese el id del acudiente: ")
+                }
+                return infaux
+            return None
+            
+        inf = { 
+            "Id" : iaux,
+            "Nombre": input("Ingrese el nombre del camper: "),
+            "Apellido" : input("Ingrese el apellido del camper: "),
+            "Edad" : int(input("Ingrese la edad del camper: ")),
+            "Estado" : "",
+            "Ruta" : "",
+            "Grupo" : "",
+            "Notas" : [] 
+        }
+        inf["Direccion"] = input("Ingrese la direccion del camper: ")
+        inf["Telefono"] = [
+                {
+                    f"{'Fijo' if(int(input('0. Celular 1. Fijo : '))) else 'Celular'}":
+                    int(input(f'Numero de contacto {x+1}: '))
+                }
+                for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
+            ],
+        inf["Acudiente"] = acudiente(inf["Edad"])
+        if inf["Acudiente"] == None:
+            del inf["Acudiente"]
         return inf
 #Elimina Camper
 def eliminarcamper():
@@ -83,8 +113,7 @@ def actualizarcamper():
             print(f'Nombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
             se = input("Esta seguro que desea editar el camper?(S/N)")
             if se == "S":
-                iaux = 1
-                infaux = crearcamper(iaux)
+                infaux = crearcamper(id)
                 camper[i] = infaux
                 print("El camper se ha modificado")
                 savejson(camper)

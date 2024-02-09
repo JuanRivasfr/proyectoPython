@@ -146,8 +146,7 @@ def menugestion():
                 break
             case _:
                 print("Opcion invalida")
-                menucr()
-        
+                menucr()       
 #Menu Principal
 def menucr():
     os.system('cls')

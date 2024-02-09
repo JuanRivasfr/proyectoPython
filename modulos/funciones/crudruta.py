@@ -63,39 +63,56 @@ def crearruta(iaux = None):
             if sel == "N":
                 return arrayauxbend
                 
-
-    inf = { 
-        "Nombre": input("Ingrese el nombre de la ruta: ")
-        }
-    comun = input("Desea agregar el comun core?(S/N)\n: ").upper()
-    if comun == "S":
-        inf["FPOO"] = ["INTRODUCCION A LA ALGORITMIA", "PSEINT", "PYTHON"]
-        inf["PWEB"] = ["HTML", "CSS", "BOOTSTRAP"]
-        inf["PFORMAL"] = ["JAVA", "JAVASCRIPT", "C#"]
-    elif comun == "N":    
-        inf["FPOO"] = fpoo()
-        inf["PWEB"] = pweb()
-        inf["PFORMAL"] = pformal()
-    else: 
-        print("OPCION NO VALIDA")
-        os.system('pause')
-        crearruta()
-    inf["BD"] = bd()
-    inf["BEND"] = bend()
-
-    for i, value in enumerate(ruta):
-            if value["Nombre"] == inf["Nombre"]:
-                print("Ya hay una ruta creada con el mismo nombre, por favor intente con otro")
-                os.system('pause')
-                return
-            
     if iaux == None:
+
+        inf = { 
+            "Nombre": input("Ingrese el nombre de la ruta: ")
+            }
+        for i, value in enumerate(ruta):
+                if value["Nombre"] == inf["Nombre"]:
+                    print("Ya hay una ruta creada con el mismo nombre, por favor intente con otro")
+                    os.system('pause')
+                    return
+        comun = input("Desea agregar el comun core?(S/N)\n: ").upper()
+        if comun == "S":
+            inf["FPOO"] = ["INTRODUCCION A LA ALGORITMIA", "PSEINT", "PYTHON"]
+            inf["PWEB"] = ["HTML", "CSS", "BOOTSTRAP"]
+            inf["PFORMAL"] = ["JAVA", "JAVASCRIPT", "C#"]
+        elif comun == "N":    
+            inf["FPOO"] = fpoo()
+            inf["PWEB"] = pweb()
+            inf["PFORMAL"] = pformal()
+        else: 
+            print("OPCION NO VALIDA")
+            os.system('pause')
+            crearruta()
+        inf["BD"] = bd()
+        inf["BEND"] = bend()
+
         ruta.append(inf)
         print("La ruta ha sido creada")
         savejson(ruta)
         os.system('pause')
-        return
     else :
+        inf = { 
+            "Nombre": iaux
+            }
+        comun = input("Desea agregar el comun core?(S/N)\n: ").upper()
+        if comun == "S":
+            inf["FPOO"] = ["INTRODUCCION A LA ALGORITMIA", "PSEINT", "PYTHON"]
+            inf["PWEB"] = ["HTML", "CSS", "BOOTSTRAP"]
+            inf["PFORMAL"] = ["JAVA", "JAVASCRIPT", "C#"]
+        elif comun == "N":    
+            inf["FPOO"] = fpoo()
+            inf["PWEB"] = pweb()
+            inf["PFORMAL"] = pformal()
+        else: 
+            print("OPCION NO VALIDA")
+            os.system('pause')
+            crearruta()
+        inf["BD"] = bd()
+        inf["BEND"] = bend()
+
         return inf
 #Elimina ruta
 def eliminarruta():
@@ -110,7 +127,6 @@ def eliminarruta():
             for i1, val in (value).items():
                 if i1 != "Nombre":
                     print(f'{i1}:')
-                    print("----------------------")
                     if i1 == "BD":
                         for i2, val2 in (val).items():
                             print(val2)
@@ -143,7 +159,6 @@ def actualizarruta():
             for i1, val in (value).items():
                 if i1 != "Nombre":
                     print(f'{i1}:')
-                    print("----------------------")
                     if i1 == "BD":
                         for i2, val2 in (val).items():
                             print(val2)
@@ -153,8 +168,7 @@ def actualizarruta():
                     print("----------------------")
             se = input("Esta seguro que desea editar la ruta?(S/N): ")
             if se == "S":
-                iaux = 1
-                infaux = crearruta(iaux)
+                infaux = crearruta(nombre)
                 ruta[i] = infaux
                 print("La ruta se ha modificado")
                 savejson(ruta)
@@ -162,7 +176,7 @@ def actualizarruta():
                 return
             else:
                 return
-    print("No se encontro un camper con ese registro")
+    print("No se encontro una ruta con ese registro")
     os.system('pause')
 #Ver todos las rutas
 def vertodasrutas():
@@ -176,7 +190,6 @@ def vertodasrutas():
         for i1, val in (value).items():
             if i1 != "Nombre":
                 print(f'{i1}:')
-                print("----------------------")
                 if i1 == "BD":
                     for i2, val2 in (val).items():
                         print(val2)

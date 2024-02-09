@@ -1,3 +1,19 @@
 [
-
+    {
+        "Id": 1,
+        "Estado": "",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [],
+        "Nombre": "Juan",
+        "Apellido": "Rivas",
+        "Edad": 19,
+        "Telefono": [
+            []
+        ],
+        "Acudiente": {
+            "Nombre": "sadas",
+            "Id": "123"
+        }
+    }
 ]

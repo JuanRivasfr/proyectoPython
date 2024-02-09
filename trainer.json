@@ -1,3 +1,20 @@
 [
-    
+    {
+        "Id": 1,
+        "Nombre": "LJASDSA",
+        "Apellido": "KJSADSA",
+        "Edad": 18,
+        "HorariosD": [
+            {
+                "Horarios": "10-12AM",
+                "Disponible": "Si"
+            },
+            {
+                "Horarios": "2-5PM",
+                "Disponible": "Si"
+            }
+        ],
+        "Telefono": [],
+        "Rutas": []
+    }
 ]

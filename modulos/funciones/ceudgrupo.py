@@ -13,88 +13,152 @@ def creargrupos(iaux = None):
 
     with open('rutas.json', 'r') as json_file2:
         ruta = json.load(json_file2)
-
-    inf = { 
-        "Identificador" : input("Ingrese el identificador del grupo: ").upper(),
-        "Inicio" : input("Ingrese la fecha de inicio(AA/MM/DD): "),
-        "Final" : input("Ingrese la fecha de finalizacion(AA/MM/DD): "),
-        "Salon" : "",
-        "Modulo" : "FPOO",
-        "Estudiantes" : [],
-        "Ruta" : ""
-    }
-    print("Que trainer desde agregar al grupo?")
-    for i, value in enumerate(trainer):
-        print(f'{i+1}. {value["Nombre"]}')
-    auxx = int(input(":"))
-    contador = int(0)
-    for i, value in enumerate(trainer):
-        if (i + 1) == auxx:
-            for i1, val in enumerate(value["HorariosD"]):
-                if val["Disponible"] == "No":
-                    contador += 1
-                    if contador == len(value["HorariosD"]):
-                        print("El trainer no tiene horarios disponibles")
-                        os.system('pause')
-                        return
-    for i, value in enumerate(trainer):
-        if (i + 1) == auxx:
-            nom = value["Nombre"]
-            print("Horarios")
-            for i1, val in enumerate(value["HorariosD"]):
-                if val["Disponible"] == "Si":
-                    print(f'{i1+1}. {val["Horarios"]}')
-                else:
-                    print(f'{i1+1}. {val["Horarios"]} (OCUPADO)')
-            trainer[i]["Rutas"].append(inf["Identificador"])
-    opc = int(input("¿Que horario desea agregar?\n:"))
-    for i, value in enumerate(trainer):
-        if (i + 1) == auxx:
-            for i1, val in enumerate(value["HorariosD"]):
-                if (i1 + 1) == opc:
-                    hor = val["Horarios"]
-                    val["Disponible"] = "No"
-    
-    #Agregar Salon
-    auxsalon = input("Que salon desea agregar? \n1. Artemis \n2. Apolo \n3. Sputnik \n:")
-    if auxsalon == "1":
-        salon = "Artemis"
-    if auxsalon == "2":
-        salon = "Apolo"
-    if auxsalon == "3":
-        salon = "Sputnik"
-    if (grupos) != None:
-        for i, value in enumerate(grupos):
-            if value["Salon"] == salon and value["Horario"] == hor:
-                print("El salon esta ocupado en ese horario")
-                os.system('pause')
-                return
-    inf["Salon"] = salon
-    inf["Trainer"] = nom
-    inf["Horario"] = hor
-    #Agregar ruta
-    print("Que ruta desea agregar al grupo")
-    for i,value in enumerate(ruta):
-        print(f'{i+1}.{value["Nombre"]}')
-    rut = int(input(": "))
-    for i, value in enumerate(ruta):
-        if rut-1 == i:
-            inf["Ruta"] = value["Nombre"]
-
-    for i, value in enumerate(grupos):
-            if value["Identificador"] == inf["Identificador"]:
-                print("Ya hay un registro creado con el mismo identificador, por favor intente con otro")
-                os.system('pause')
-                return
-            
     if iaux == None:
+        inf = { 
+            "Identificador" : input("Ingrese el identificador del grupo: ").upper(),
+            "Salon" : "",
+            "Modulo" : "FPOO",
+            "Estudiantes" : [],
+            "Ruta" : ""
+        }
+        for i, value in enumerate(grupos):
+                if value["Identificador"] == inf["Identificador"]:
+                    print("Ya hay un registro creado con el mismo identificador, por favor intente con otro")
+                    os.system('pause')
+                    return
+        inf["Inicio"] = input("Ingrese la fecha de inicio(AA/MM/DD): ")
+        inf["Final"] = input("Ingrese la fecha de finalizacion(AA/MM/DD): ")
+        print("Que trainer desde agregar al grupo?")
+        for i, value in enumerate(trainer):
+            print(f'{i+1}. {value["Nombre"]}')
+        auxx = int(input(":"))
+        contador = int(0)
+        for i, value in enumerate(trainer):
+            if (i + 1) == auxx:
+                for i1, val in enumerate(value["HorariosD"]):
+                    if val["Disponible"] == "No":
+                        contador += 1
+                        if contador == len(value["HorariosD"]):
+                            print("El trainer no tiene horarios disponibles")
+                            os.system('pause')
+                            return
+        for i, value in enumerate(trainer):
+            if (i + 1) == auxx:
+                nom = value["Nombre"]
+                print("Horarios")
+                for i1, val in enumerate(value["HorariosD"]):
+                    if val["Disponible"] == "Si":
+                        print(f'{i1+1}. {val["Horarios"]}')
+                    else:
+                        print(f'{i1+1}. {val["Horarios"]} (OCUPADO)')
+                trainer[i]["Rutas"].append(inf["Identificador"])
+        opc = int(input("¿Que horario desea agregar?\n:"))
+        for i, value in enumerate(trainer):
+            if (i + 1) == auxx:
+                for i1, val in enumerate(value["HorariosD"]):
+                    if (i1 + 1) == opc:
+                        hor = val["Horarios"]
+                        val["Disponible"] = "No"
+        
+        #Agregar Salon
+        auxsalon = input("Que salon desea agregar? \n1. Artemis \n2. Apolo \n3. Sputnik \n:")
+        if auxsalon == "1":
+            salon = "Artemis"
+        if auxsalon == "2":
+            salon = "Apolo"
+        if auxsalon == "3":
+            salon = "Sputnik"
+        if (grupos) != None:
+            for i, value in enumerate(grupos):
+                if value["Salon"] == salon and value["Horario"] == hor:
+                    print("El salon esta ocupado en ese horario")
+                    os.system('pause')
+                    return
+        inf["Salon"] = salon
+        inf["Trainer"] = nom
+        inf["Horario"] = hor
+        #Agregar ruta
+        print("Que ruta desea agregar al grupo")
+        for i,value in enumerate(ruta):
+            print(f'{i+1}.{value["Nombre"]}')
+        rut = int(input(": "))
+        for i, value in enumerate(ruta):
+            if rut-1 == i:
+                inf["Ruta"] = value["Nombre"]
+
         grupos.append(inf)
         print("El grupo ha sido creado")
         savejson(grupos)
         savejsontrainers(trainer)
         os.system('pause')
-        return
     else :
+        inf = { 
+            "Identificador" : iaux,
+            "Salon" : "",
+            "Modulo" : "FPOO",
+            "Estudiantes" : [],
+            "Ruta" : ""
+        }
+        inf["Inicio"] = input("Ingrese la fecha de inicio(AA/MM/DD): ")
+        inf["Final"] = input("Ingrese la fecha de finalizacion(AA/MM/DD): ")
+        print("Que trainer desde agregar al grupo?")
+        for i, value in enumerate(trainer):
+            print(f'{i+1}. {value["Nombre"]}')
+        auxx = int(input(":"))
+        contador = int(0)
+        for i, value in enumerate(trainer):
+            if (i + 1) == auxx:
+                for i1, val in enumerate(value["HorariosD"]):
+                    if val["Disponible"] == "No":
+                        contador += 1
+                        if contador == len(value["HorariosD"]):
+                            print("El trainer no tiene horarios disponibles")
+                            os.system('pause')
+                            return
+        for i, value in enumerate(trainer):
+            if (i + 1) == auxx:
+                nom = value["Nombre"]
+                print("Horarios")
+                for i1, val in enumerate(value["HorariosD"]):
+                    if val["Disponible"] == "Si":
+                        print(f'{i1+1}. {val["Horarios"]}')
+                    else:
+                        print(f'{i1+1}. {val["Horarios"]} (OCUPADO)')
+                trainer[i]["Rutas"].append(inf["Identificador"])
+        opc = int(input("¿Que horario desea agregar?\n:"))
+        for i, value in enumerate(trainer):
+            if (i + 1) == auxx:
+                for i1, val in enumerate(value["HorariosD"]):
+                    if (i1 + 1) == opc:
+                        hor = val["Horarios"]
+                        val["Disponible"] = "No"
+        
+        #Agregar Salon
+        auxsalon = input("Que salon desea agregar? \n1. Artemis \n2. Apolo \n3. Sputnik \n:")
+        if auxsalon == "1":
+            salon = "Artemis"
+        if auxsalon == "2":
+            salon = "Apolo"
+        if auxsalon == "3":
+            salon = "Sputnik"
+        if (grupos) != None:
+            for i, value in enumerate(grupos):
+                if value["Salon"] == salon and value["Horario"] == hor:
+                    print("El salon esta ocupado en ese horario")
+                    os.system('pause')
+                    return
+        inf["Salon"] = salon
+        inf["Trainer"] = nom
+        inf["Horario"] = hor
+        #Agregar ruta
+        print("Que ruta desea agregar al grupo")
+        for i,value in enumerate(ruta):
+            print(f'{i+1}.{value["Nombre"]}')
+        rut = int(input(": "))
+        for i, value in enumerate(ruta):
+            if rut-1 == i:
+                inf["Ruta"] = value["Nombre"]
+
         return inf
 #Elimina Grupos
 def eliminargrupos():
@@ -127,7 +191,7 @@ def eliminargrupos():
                                     return
             else:
                 return
-    print("No se encontro el camper con ese id")
+    print("No se encontro un grupo con ese identificador")
     os.system('pause')
 #Actualiza Grupos
 def actualizargrupos():
@@ -153,8 +217,7 @@ def actualizargrupos():
                                 if v["Horarios"] == value["Horario"]:
                                     trainer[i1]["HorariosD"][i3]["Disponible"] = "Si"
                                     savejsontrainers(trainer)
-                                    iux = 3
-                                    inf1 = creargrupos(iux)
+                                    inf1 = creargrupos(id)
                                     grupos[i] = inf1
                                     print("El grupo ha sido editado")
                                     savejson(grupos)

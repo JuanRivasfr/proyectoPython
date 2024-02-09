@@ -1,3 +1,27 @@
 [
-    
+    {
+        "Nombre": "ASD",
+        "FPOO": [
+            "INTRODUCCION A LA ALGORITMIA",
+            "PSEINT",
+            "PYTHON"
+        ],
+        "PWEB": [
+            "HTML",
+            "CSS",
+            "BOOTSTRAP"
+        ],
+        "PFORMAL": [
+            "JAVA",
+            "JAVASCRIPT",
+            "C#"
+        ],
+        "BD": {
+            "BDP": "ASD",
+            "BDS": "ASDFA"
+        },
+        "BEND": [
+            "NETCORE"
+        ]
+    }
 ]

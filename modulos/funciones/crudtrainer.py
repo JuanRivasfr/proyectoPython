@@ -8,57 +8,71 @@ def creartrainer(iaux = None):
         trainer = json.load(json_file)
 
     def horariostrainer():
-        arrayaux = []
-        print("En que horarios tiene disponibilidad el trainer?")
-        while True:
-            opc = int(input("1. 6-9AM \n2. 10-12AM \n3. 2-5PM \n4. 6-10PM \n: "))
-            if opc == 1:
-                horario = "6-9AM"
-            elif opc == 2:
-                horario = "10-12AM"
-            elif opc == 3:
-                horario = "2-5PM"
-            elif opc == 4:
-                horario = "6-10PM"
-            elif opc > 4:
-                horariostrainer()
-            hora = {
-                "Horarios" : horario,
-                "Disponible" : "Si"
-            }
-            arrayaux.append(hora)
-            if (input("Desea agregar otro horario?(S/N)")) == "N":
-                break
-        return arrayaux
-    inf = { 
-        "Id" : int(input("Ingrese el id del trainer: ")),
-        "Nombre": input("Ingrese el nombre del trainer: "),
-        "Apellido" : input("Ingrese el apellido del trainer: "),
-        "Edad" : int(input("Ingrese la edad del trainer: ")),
-        "HorariosD" : horariostrainer(),
-        "Telefono" : [
-            {
-                f"{'Fijo' if(int(input('0. Celular 1. Fijo : '))) else 'Celular'}":
-                int(input(f'Numero de contacto {x+1}: '))
-            }
-            for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
-        ],
-        "Rutas" : [],
-    }
-    
-    for i, value in enumerate(trainer):
-            if value["Id"] == inf["Id"]:
-                print("Ya hay un registro creado con el mismo ID, por favor intente con otro")
-                os.system('pause')
-                return
-            
+            arrayaux = []
+            print("En que horarios tiene disponibilidad el trainer?")
+            while True:
+                opc = int(input("1. 6-9AM \n2. 10-12AM \n3. 2-5PM \n4. 6-10PM \n: "))
+                if opc == 1:
+                    horario = "6-9AM"
+                elif opc == 2:
+                    horario = "10-12AM"
+                elif opc == 3:
+                    horario = "2-5PM"
+                elif opc == 4:
+                    horario = "6-10PM"
+                elif opc > 4:
+                    horariostrainer()
+                hora = {
+                    "Horarios" : horario,
+                    "Disponible" : "Si"
+                }
+                arrayaux.append(hora)
+                if (input("Desea agregar otro horario?(S/N)")) == "N":
+                    break
+            return arrayaux
+
     if iaux == None:
+        inf = { 
+            "Id" : int(input("Ingrese el id del trainer: ")),
+            "Rutas" : [],
+        }
+        for i, value in enumerate(trainer):
+                if value["Id"] == inf["Id"]:
+                    print("Ya hay un registro creado con el mismo ID, por favor intente con otro")
+                    os.system('pause')
+                    return
+        inf["Nombre"] = input("Ingrese el nombre del trainer: ")
+        inf["Apellido"] = input("Ingrese el apellido del trainer: ")
+        inf["Edad"] = int(input("Ingrese la edad del trainer: "))
+        inf["HorariosD"] = horariostrainer()
+        inf["Telefono"] = [
+                {
+                    f"{'Fijo' if(int(input('0. Celular 1. Fijo : '))) else 'Celular'}":
+                    int(input(f'Numero de contacto {x+1}: '))
+                }
+                for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
+            ],
         trainer.append(inf)
         print("El trainer ha sido creado")
         savejson(trainer)
         os.system('pause')
-        return
+        
     else :
+        inf = { 
+            "Id" : iaux,
+            "Nombre": input("Ingrese el nombre del trainer: "),
+            "Apellido" : input("Ingrese el apellido del trainer: "),
+            "Edad" : int(input("Ingrese la edad del trainer: ")),
+            "HorariosD" : horariostrainer(),
+            "Telefono" : [
+                {
+                    f"{'Fijo' if(int(input('0. Celular 1. Fijo : '))) else 'Celular'}":
+                    int(input(f'Numero de contacto {x+1}: '))
+                }
+                for x in range((int(input("¿Cuantos numeros de contacto tiene?: "))))
+            ],
+            "Rutas" : [],
+        }
         return inf
 #Elimina trainer
 def eliminartrainer():
@@ -92,8 +106,7 @@ def actualizartrainer():
             print(f'Nombre: {value["Nombre"]} \nApellido: {value["Apellido"]} \nEdad: {value["Edad"]}')
             se = input("Esta seguro que desea editar el trainer?(S/N)")
             if se == "S":
-                iaux = 1
-                infaux = creartrainer(iaux)
+                infaux = creartrainer(id)
                 trainer[i] = infaux
                 print("El trainer se ha modificado")
                 savejson(trainer)

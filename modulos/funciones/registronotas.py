@@ -32,7 +32,6 @@ def registropruebainicial():
                 return
     print("No es posible registrar la prueba inicial debido al estado del camper")
     os.system('pause')
-
 #Registro prueba fpoo
 def registropruebafpoo():
     os.system('cls')
@@ -65,7 +64,6 @@ def registropruebafpoo():
                 return
     print("No es posible registrar la prueba inicial debido al estado del camper")
     os.system('pause')
-
 #Registro modulos
 def registromodulos():
     os.system('cls')
