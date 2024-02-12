@@ -13,6 +13,7 @@ def asignarestudiantes():
         if valor["Id"] == id:
             if camper[index1]["Estado"] != "Pre-inscrito":
                 print("El estado del camper no esta en Pre-inscrito, por lo que no es posible matricularlo")
+                os.system('pause')
                 return
     for i2, value1 in enumerate(grupos):
         for i3, value2 in enumerate(grupos[i2]["Estudiantes"]):
@@ -59,10 +60,6 @@ def asignarestudiantes():
                 print("El grupo esta lleno")
                 os.system('pause')
                 return
-    
-    opc1 = input("Dese agregar otro camper?(S/N): ").upper()
-    if opc1 == "S":
-        asignarestudiantes()
 #Guarda el json
 
 def savejson(camper): 

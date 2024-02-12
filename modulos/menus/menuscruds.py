@@ -116,6 +116,7 @@ def mnotas():
         opc = int(input("1.REGISTRAR PRUEBAS \n2.REGISTRAR NOTA DE MODULO \n3.VOLVER \n:"))
         match(opc):
             case 1:
+                os.system('cls')
                 print("1.REGISTRO PRUEBA INICIAL \n2.REGISTRO PRUEBA FPOO")
                 opc1 = int(input(": "))
                 match(opc1):
@@ -132,8 +133,8 @@ def mnotas():
                 mnotas()
 #Segunda opcion Menu
 def menugestion():
-    os.system('cls')
     while(True):
+        os.system('cls')
         opc = int(input("1.ADMINISTRACION GRUPOS \n2.ASIGNAR ESTUDIANTES A GRUPOS \n3.REGISTRO DE NOTAS \n4.VOLVER \n:"))
         match(opc):
             case 1:
@@ -149,8 +150,8 @@ def menugestion():
                 menucr()       
 #Menu Principal
 def menucr():
-    os.system('cls')
     while(True):
+        os.system('cls')
         opc = int(input("1.CRUD CAMPER \n2.CRUD TRAINER \n3.CRUD RUTAS \n4.VOLVER \n:"))
         match(opc):
             case 1:

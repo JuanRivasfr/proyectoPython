@@ -1,19 +1,220 @@
 [
     {
         "Id": 1,
-        "Estado": "",
-        "Ruta": "",
-        "Grupo": "",
-        "Notas": [],
+        "Estado": "Pre-inscrito",
+        "Ruta": "NodeJs",
+        "Grupo": "M1",
+        "Notas": [
+            {
+                "Prueba inicial": 83.5
+            }
+        ],
         "Nombre": "Juan",
         "Apellido": "Rivas",
         "Edad": 19,
         "Telefono": [
-            []
+            [
+                {
+                    "Celular": 3108084632
+                }
+            ]
+        ]
+    },
+    {
+        "Id": 2,
+        "Estado": "No aprobado",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [
+            {
+                "Prueba inicial": 39.5
+            }
+        ],
+        "Nombre": "Jhoan",
+        "Apellido": "Ruiz",
+        "Edad": 17,
+        "Telefono": [
+            [
+                {
+                    "Fijo": 6457898
+                }
+            ]
         ],
         "Acudiente": {
-            "Nombre": "sadas",
-            "Id": "123"
+            "Nombre": "Angelica",
+            "Id": "14452152"
         }
+    },
+    {
+        "Id": 3,
+        "Estado": "Pre-inscrito",
+        "Ruta": "Node",
+        "Grupo": "J1",
+        "Notas": [
+            {
+                "Prueba inicial": 78.0
+            }
+        ],
+        "Nombre": "Manuel",
+        "Apellido": "Tuliso",
+        "Edad": 19,
+        "Telefono": [
+            [
+                {
+                    "Celular": 789456423
+                }
+            ]
+        ]
+    },
+    {
+        "Id": 4,
+        "Estado": "Pre-inscrito",
+        "Ruta": "NodeJs",
+        "Grupo": "M1",
+        "Notas": [
+            {
+                "Prueba inicial": 78.0
+            }
+        ],
+        "Nombre": "Gabriel",
+        "Apellido": "Garcia",
+        "Edad": 20,
+        "Telefono": [
+            [
+                {
+                    "Celular": 123213124
+                }
+            ]
+        ]
+    },
+    {
+        "Id": 5,
+        "Estado": "Pre-inscrito",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [
+            {
+                "Prueba inicial": 89.5
+            }
+        ],
+        "Nombre": "Veronica",
+        "Apellido": "Ruiz",
+        "Edad": 23,
+        "Telefono": [
+            [
+                {
+                    "Celular": 6358657
+                }
+            ]
+        ]
+    },
+    {
+        "Id": 6,
+        "Estado": "Pre-inscrito",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [
+            {
+                "Prueba inicial": 83.5
+            }
+        ],
+        "Nombre": "Camilo",
+        "Apellido": "Torres",
+        "Edad": 17,
+        "Telefono": [
+            [
+                {
+                    "Fijo": 31234235
+                }
+            ]
+        ],
+        "Acudiente": {
+            "Nombre": "Angelica",
+            "Id": "123112314"
+        }
+    },
+    {
+        "Id": 7,
+        "Estado": "No aprobado",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [
+            {
+                "Prueba inicial": 23.0
+            }
+        ],
+        "Nombre": "Michael",
+        "Apellido": "Jovani",
+        "Edad": 24,
+        "Telefono": [
+            [
+                {
+                    "Celular": 6457898
+                }
+            ]
+        ]
+    },
+    {
+        "Id": 8,
+        "Estado": "Pre-inscrito",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [
+            {
+                "Prueba inicial": 78.0
+            }
+        ],
+        "Nombre": "Karen",
+        "Apellido": "Jerez",
+        "Edad": 25,
+        "Telefono": [
+            []
+        ]
+    },
+    {
+        "Id": 9,
+        "Estado": "Pre-inscrito",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [
+            {
+                "Prueba inicial": 60.0
+            }
+        ],
+        "Nombre": "Mateo",
+        "Apellido": "Reyes",
+        "Edad": 17,
+        "Telefono": [
+            [
+                {
+                    "Fijo": 6758976
+                }
+            ]
+        ],
+        "Acudiente": {
+            "Nombre": "Karen",
+            "Id": "Gutierrez"
+        }
+    },
+    {
+        "Id": 10,
+        "Estado": "Pre-inscrito",
+        "Ruta": "",
+        "Grupo": "",
+        "Notas": [
+            {
+                "Prueba inicial": 60.5
+            }
+        ],
+        "Nombre": "John",
+        "Apellido": "Ariza",
+        "Edad": 20,
+        "Telefono": [
+            [
+                {
+                    "Celular": 310897656
+                }
+            ]
+        ]
     }
 ]

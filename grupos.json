@@ -1,13 +1,44 @@
 [
     {
-        "Identificador": "M4",
+        "Identificador": "M1",
         "Salon": "Artemis",
         "Modulo": "FPOO",
-        "Estudiantes": [],
-        "Ruta": "ASD",
-        "Inicio": "12",
-        "Final": "12",
-        "Trainer": "LJASDSA",
-        "Horario": "2-5PM"
+        "Estudiantes": [
+            {
+                "Id": 1,
+                "Nombre": "Juan",
+                "Apellido": "Rivas",
+                "Notas": []
+            },
+            {
+                "Id": 4,
+                "Nombre": "Gabriel",
+                "Apellido": "Garcia",
+                "Notas": []
+            }
+        ],
+        "Ruta": "NodeJs",
+        "Inicio": "07/01/24",
+        "Final": "12/09/24",
+        "Trainer": "Miguel",
+        "Horario": "6-9AM"
+    },
+    {
+        "Identificador": "J1",
+        "Salon": "Apolo",
+        "Modulo": "FPOO",
+        "Estudiantes": [
+            {
+                "Id": 3,
+                "Nombre": "Manuel",
+                "Apellido": "Tuliso",
+                "Notas": []
+            }
+        ],
+        "Ruta": "Node",
+        "Inicio": "23/01/12",
+        "Final": "26/09/12",
+        "Trainer": "Jolver",
+        "Horario": "10-12AM"
     }
 ]

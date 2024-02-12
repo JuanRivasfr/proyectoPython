@@ -30,7 +30,7 @@ def registropruebainicial():
                 camper[i]["Notas"].append(nota) 
                 savejsoncamper(camper)
                 return
-    print("No es posible registrar la prueba inicial debido al estado del camper")
+    print("No es posible registrar la prueba inicial debido a que el camper no existe o ya la presento")
     os.system('pause')
 #Registro prueba fpoo
 def registropruebafpoo():
@@ -177,7 +177,6 @@ def registromodulos():
                     return
     savejsoncamper(camper)
     savejsongrupos(grupos)
-        
 
 def savejsoncamper(camper): 
     with open('camper.json', 'w') as json_file:

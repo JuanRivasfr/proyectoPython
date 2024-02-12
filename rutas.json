@@ -1,6 +1,6 @@
 [
     {
-        "Nombre": "ASD",
+        "Nombre": "NodeJs",
         "FPOO": [
             "INTRODUCCION A LA ALGORITMIA",
             "PSEINT",
@@ -17,11 +17,36 @@
             "C#"
         ],
         "BD": {
-            "BDP": "ASD",
-            "BDS": "ASDFA"
+            "BDP": "MONGO",
+            "BDS": "SQLSERVER"
         },
         "BEND": [
             "NETCORE"
+        ]
+    },
+    {
+        "Nombre": "Node",
+        "FPOO": [
+            "INTRODUCCION A LA ALGORITMIA",
+            "PSEINT",
+            "PYTHON"
+        ],
+        "PWEB": [
+            "HTML",
+            "CSS",
+            "BOOTSTRAP"
+        ],
+        "PFORMAL": [
+            "JAVA",
+            "JAVASCRIPT",
+            "C#"
+        ],
+        "BD": {
+            "BDP": "MICROSOFTSQL",
+            "BDS": "MONGO"
+        },
+        "BEND": [
+            "SPRING BOOT"
         ]
     }
 ]

@@ -1,10 +1,17 @@
 [
     {
         "Id": 1,
-        "Nombre": "LJASDSA",
-        "Apellido": "KJSADSA",
-        "Edad": 18,
+        "Rutas": [
+            "M1"
+        ],
+        "Nombre": "Miguel",
+        "Apellido": "Castro",
+        "Edad": 23,
         "HorariosD": [
+            {
+                "Horarios": "6-9AM",
+                "Disponible": "No"
+            },
             {
                 "Horarios": "10-12AM",
                 "Disponible": "Si"
@@ -14,9 +21,42 @@
                 "Disponible": "Si"
             }
         ],
-        "Telefono": [],
+        "Telefono": [
+            [
+                {
+                    "Fijo": 321321234
+                }
+            ]
+        ]
+    },
+    {
+        "Id": 2,
         "Rutas": [
-            "M4"
+            "J1"
+        ],
+        "Nombre": "Jolver",
+        "Apellido": "Ruiz",
+        "Edad": 20,
+        "HorariosD": [
+            {
+                "Horarios": "10-12AM",
+                "Disponible": "No"
+            },
+            {
+                "Horarios": "2-5PM",
+                "Disponible": "Si"
+            },
+            {
+                "Horarios": "6-10PM",
+                "Disponible": "Si"
+            }
+        ],
+        "Telefono": [
+            [
+                {
+                    "Fijo": 310897658
+                }
+            ]
         ]
     }
 ]
